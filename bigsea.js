@@ -607,7 +607,7 @@ Sea.static = {
     },
     // 弹窗
     confirm(msg, callback) {
-        let e = Sea('seaConfirm')
+        let e = Sea('sea.confirm')
         e.show()
         e.find('btn').removeAttr('style')
         e.find('.msg').dom.innerText = msg
@@ -615,7 +615,7 @@ Sea.static = {
     },
     // 提示
     alert(msg, callback) {
-        let e = Sea('seaConfirm')
+        let e = Sea('sea.confirm')
         e.show()
         e.find('.no').hide()
         e.find('.msg').dom.innerText = msg
@@ -624,120 +624,6 @@ Sea.static = {
 }
 Object.keys(Sea.static).forEach(function(k) {
     Sea[k] = Sea.static[k]
-})
-// 构建 HTML CSS
-Sea.init = {
-    // 弹窗
-    confirm() {
-        // CSS
-        Sea.innerHTML = `<style>
-            seaConfirm {
-                display: none;
-                justify-content: center;
-                align-items: center;
-                position:  fixed;
-                width: 100%;
-                height: 100%;
-                top: 0;
-                left: 0;
-                z-index: 100;
-                background: rgba(0,0,0,0.76);
-            }
-            seaConfirm .cont {
-                position: relative;
-                pointer-events: auto;
-
-                display: flex;
-                justify-content: center;
-                align-items: center;
-
-                flex-direction: column;
-                border-radius: .4rem;
-                max-width:  80%;
-                max-height: 80%;
-                color: #FFF;
-                background: rgba(98, 98, 98, 0.98);
-            }
-            seaConfirm .msg {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                font-size: 1.23rem;
-                font-weight: lighter;
-                padding: 1rem;
-                text-align: center;
-                overflow-y: auto;
-            }
-            seaConfirm .btns {
-                box-sizing: border-box;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                width: 100%;
-                padding: 1rem;
-                border-bottom-left-radius: .4rem;
-                border-bottom-right-radius: .4rem;
-                color: rgba(98, 98, 98, 0.98);
-                background: rgba(255,255,255,0.71);
-            }
-            seaConfirm btn {
-                cursor: pointer;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                margin: .5rem;
-                border-style: none;
-                border-radius: .25rem;
-                width: 8rem;
-                height: 3rem;
-                background: rgb(249,249,249);
-            }
-            seaConfirm btn:hover {
-                background: rgb(251,251,251);
-            }
-            seaConfirm .ok {
-                background: rgb(90, 151, 255);
-                color: #FFF;
-                font-weight: bold;
-            }
-            seaConfirm .ok:hover {
-                background: rgb(98, 156, 255);
-            }
-            </style>`.css()
-        Sea('head').append(Sea.innerHTML)
-        // HTML
-        Sea.innerHTML = `<seaConfirm>
-            <div class="cont">
-                <text class="msg"></text>
-                <div class="btns">
-                    <btn class="ok">确定</btn>
-                    <btn class="no">取消</btn>
-                </div>
-            </div>
-            </seaConfirm>`.html()
-        Sea('body').append(Sea.innerHTML)
-        // Event
-        let e = Sea('seaConfirm')
-        let callback = function(bool) {
-            e.hide()
-            let f = Sea.confirm.callback
-            if (f && typeof f == 'function') {
-                f(bool)
-                Sea.confirm.callback = undefined
-            } else {
-                // log("not callback")
-            }
-        }
-        e.find('.ok').on('click', function() {
-            callback(true)
-        })
-        e.find('.no').on('click', function() {
-            callback(false)
-        })
-    },
-}
-Object.keys(Sea.init).forEach(function(k) {
-    Sea.init[k]()
 })
 // Sea.Ajax.help
 Sea.Ajax.help = `// 示例

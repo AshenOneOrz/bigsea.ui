@@ -3,12 +3,24 @@
 <head>
     <meta charset="utf-8">
     <title>Test</title>
-    <link href="bigsea_ui.css" rel="stylesheet">
+    <link href="index.css" rel="stylesheet">
+    <link href="iconfont.css" rel="stylesheet">
 </head>
 <body>
-    <sea-input/>
+    <sea class="input"></sea>
+    <sea class="btn primary lg">
+        <i class="iconfont icon-rest"></i>
+        <text>Primary</text>
+    </sea>
+    <sea class="btn">Default</sea>
+
     <!-- js -->
     <script src="bigsea.js"></script>
     <script src="bigsea_ui.js"></script>
+    <script>
+        Sea('sea.btn').on('click', function() {
+            Sea.confirm('测试')
+        })
+    </script>
 </body>
 </html>

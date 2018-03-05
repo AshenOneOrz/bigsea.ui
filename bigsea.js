@@ -118,15 +118,15 @@ class bigsea {
                 for (let e of this.arr) {
                     let _callback = function(event) {
                         let parent = Sea(event.target).parent(select).dom
-                        for(let dom of this.querySelectorAll(select)) {
+                        this.querySelectorAll(select).forEach(function(dom, index) {
                             if (dom.isSameNode(parent)) {
-                                // callback.bind(dom)(event)
-                                callback.call(dom, event)
+                                // callback.bind(dom)(event, index)
+                                callback.call(dom, event, index)
                                 if (one === true) {
                                     e.removeEventListener(name, _callback)
                                 }
                             }
-                        }
+                        })
                     }
                     if (['blur', 'focus'].includes(name)) {
                         e.addEventListener(name, _callback, true)
@@ -299,6 +299,16 @@ class bigsea {
             }
         } else {
             return ''
+        }
+    }
+    // dataset
+    data(key, val) {
+        if (this.dom) {
+            if (val !== undefined) {
+                this.dom.dataset[key] = val
+            } else {
+                return this.dom.dataset[key]
+            }
         }
     }
 

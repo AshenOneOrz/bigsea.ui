@@ -14,7 +14,7 @@ body, button, input, select, textarea {
   --primary-active: #096dd9;
 }
 
-/* 图标 */
+/* 动画 */
 @keyframes loadingCircle {
      0% {
          -webkit-transform-origin: 50% 50%;
@@ -28,7 +28,20 @@ body, button, input, select, textarea {
          -webkit-transform: rotate(360deg);
          transform: rotate(360deg);
      }
- }
+}
+@keyframes buttonEffect {
+    to {
+        opacity: 0;
+        top: -6px;
+        left: -6px;
+        bottom: -6px;
+        right: -6px;
+        border-width: 6px;
+        filter: blur(3px);
+    }
+}
+
+/* 图标 */
 .icon-spin {
     -webkit-animation: loadingCircle 1s infinite linear;
     animation: loadingCircle 1s infinite linear;
@@ -36,6 +49,7 @@ body, button, input, select, textarea {
 
 /* 按钮 */
 sea.btn {
+    position: relative;
     cursor: pointer;
     white-space: nowrap;
 
@@ -80,6 +94,31 @@ sea.btn:not([disabled]):active {
     outline: 0;
     -webkit-transition: none;
     transition: none;
+}
+
+sea.btn.checked {
+    background: #fff;
+    border-color: var(--primary);
+    color: var(--primary);
+    z-index: 1;
+}
+
+sea.btn.clicked:after {
+    display: flex;
+    content: '';
+    position: absolute;
+    top: -1px;
+    right: -1px;
+    bottom: -1px;
+    left: -1px;
+    border-radius: inherit;
+    border: 0 solid var(--primary);
+    opacity: 0.6;
+    -webkit-animation: buttonEffect .4s;
+    animation: buttonEffect .4s;
+}
+sea.btn.clicked.danger::after {
+    border-color: #f5222d;
 }
 
 sea.btn.lg {

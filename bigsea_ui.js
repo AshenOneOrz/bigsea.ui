@@ -30,7 +30,7 @@ confirm.find('.no').on('click', function() {
 })
 
 // Event btn
-Sea('sea.btn').on('click', function() {
+Sea('sea.btn').on('mousedown', function() {
     let e = Sea(this)
     e.addClass('clicked')
     setTimeout(function() {
@@ -38,7 +38,7 @@ Sea('sea.btn').on('click', function() {
     }, 400)
     // Sea.confirm('测试')
 })
-Sea('sea.btn-group').on('click', '.btn', function(event, index) {
+Sea('sea.btn-group').on('mousedown', '.btn', function(event, index) {
     let element = Sea(this)
     let group = element.parent()
     group.data('now', index)

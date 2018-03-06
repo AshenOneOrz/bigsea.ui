@@ -33,7 +33,7 @@ Sea.bindEvent = {
             setTimeout(function() {
                 e.removeClass('clicked')
             }, 400)
-            Sea.confirm('测试')
+            // Sea.confirm('测试')
         })
         Sea('sea.btn-group').on('mousedown', '.btn', function(event, index) {
             let element = Sea(this)

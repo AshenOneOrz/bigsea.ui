@@ -3,38 +3,68 @@
 <head>
     <meta charset="utf-8">
     <title>Test</title>
-    <link href="iconfont.css" rel="stylesheet">
-    <link href="index.css" rel="stylesheet">
+    <link href="bigsea_ui_icon.css" rel="stylesheet">
+    <link href="bigsea_ui.css" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-</head>
-<body>
     <style>
         .demo {
             margin: 1rem 0;
         }
+        .demo * {
+            margin: .25rem 0;
+        }
     </style>
+</head>
+<body>
     <div class="demo">
+        <h1>按钮</h1>
         <sea class="btn primary lg">
             <i class="iconfont icon-rest"></i>
             <text>Primary</text>
         </sea>
-        <sea class="btn danger">Danger</sea>
+        <sea class="btn danger lg">Danger</sea>
         <sea class="btn-group">
             <sea class="btn">全部</sea>
             <sea class="btn">进行中</sea>
             <sea class="btn">已结束</sea>
         </sea>
+        <sea class="btn-group">
+            <sea class="btn primary">
+                <i class="iconfont icon-left"></i>
+                <text>Backward</text>
+            </sea>
+            <sea class="btn primary">
+                <text>Forward</text>
+                <i class="iconfont icon-right"></i>
+            </sea>
+        </sea>
         <sea disabled class="btn">Disabled</sea>
-        <sea loading class="btn circle lg">
-            <i class="iconfont icon-spin icon-loading-short"></i>
+        <sea class="btn circle lg">
+            <i class="iconfont icon-search"></i>
         </sea>
         <sea loading class="btn circle sm">
             <i class="iconfont icon-spin icon-loading-short"></i>
         </sea>
     </div>
-
     <div class="demo">
-        <input class="sea-input" value="">
+        <h1>输入框</h1>
+        <sea class="input-group">
+            <input value="" placeholder="input search text">
+        </sea>
+        <sea class="input-group lg">
+            <sea disabled class="btn">
+                <i class="iconfont icon-user"></i>
+            </sea>
+            <input value="">
+            <sea class="btn primary">
+                <i class="iconfont icon-search"></i>
+                <text>input search</text>
+            </sea>
+        </sea>
+    </div>
+    <div class="demo">
+        <h1>分页</h1>
+        <sea class="">
     </div>
 
     <!-- js -->

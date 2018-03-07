@@ -340,10 +340,18 @@ sea.pagination input {
 
 /* 提示 */
 sea.tooltip {
-    font-size: 14px;
-    display: inline-flex;
-    position: relative;
+    opacity: 0;
+    margin: 8px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
     z-index: 101;
+}
+sea.tooltip .inner {
+    font-size: 14px;
+    align-items: center;
+    min-width: 40px;
     max-width: 250px;
     min-height: 32px;
     padding: 6px 8px;

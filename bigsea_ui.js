@@ -61,6 +61,9 @@ Sea.bindEvent = {
             let val = this.value.replace(re, '')
             this.value = val
         })
+        input.on('focus', function(e) {
+            Sea.tooltip(this, '以下 API 为 Tooltip、Popconfirm、Popover 共享的 API。')
+        })
         p.find('.next').on('mousedown', function() {
             let i = Number(input.dom.value) + 1
             if (i <= max) {

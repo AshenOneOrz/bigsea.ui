@@ -291,7 +291,7 @@ class bigsea {
     // value
     val(str) {
         if (this.dom) {
-            if (str) {
+            if (str !== undefined) {
                 this.dom.value = str
                 return this
             } else {

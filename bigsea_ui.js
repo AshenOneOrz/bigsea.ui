@@ -10,19 +10,8 @@ Sea.innerHTML = `<sea class='confirm'>
     </sea>`.html()
 Sea('body').append(Sea.innerHTML)
 // Html 分页
-Sea.innerHTML = `<sea class="input-group">
-        <sea class="btn">
-            <i class="iconfont icon-left"></i>
-        </sea>
-        <input value="1" maxlength="3" placeholder="255">
-        <sea class="btn">
-            <i class="iconfont icon-right"></i>
-        </sea>
-        <sea class="btn primary">
-            <text>跳页</text>
-        </sea>
-    </sea>`.html()
-Sea('sea.pagination').html(Sea.innerHTML)
+// Sea.innerHTML = ``.html()
+// Sea('sea.pagination').html(Sea.innerHTML)
 
 // Events
 Sea.bindEvent = {
@@ -55,15 +44,40 @@ Sea.bindEvent = {
                 // log("not callback")
             }
         }
-        confirm.find('.ok').on('click', function() {
+        confirm.find('.ok').on('mousedown', function() {
             callback(true)
         })
-        confirm.find('.no').on('click', function() {
+        confirm.find('.no').on('mousedown', function() {
             callback(false)
         })
     },
     pagination() {
-
+        let p = Sea('sea.pagination')
+        let input = p.find('input')
+        let max = Number(p.dom.dataset.max)
+        input.dom.placeholder = String(max)
+        input.on('input', function(e) {
+            let re = /\D/g
+            let val = this.value.replace(re, '')
+            this.value = val
+        })
+        p.find('.next').on('mousedown', function() {
+            let i = Number(input.dom.value) + 1
+            if (i <= max) {
+                input.dom.value = i
+            }
+        })
+        p.find('.previous').on('mousedown', function() {
+            let i = Number(input.dom.value) - 1
+            if (i > 0) {
+                input.dom.value = i
+            }
+        })
+        p.find('.jump').on('mousedown', function() {
+            let e = new Event('jump_page', {bubbles: true})
+            e.jump = Number(input.dom.value)
+            this.dispatchEvent(e)
+        })
     },
 }
 

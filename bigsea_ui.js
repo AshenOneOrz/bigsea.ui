@@ -1,12 +1,17 @@
-// Html 弹窗
-Sea.innerHTML = `<sea class='confirm'>
-    <div class="cont">
-        <text class="msg"></text>
-        <div class="btns">
-            <btn class="ok">确定</btn>
-            <btn class="no">取消</btn>
+// Html
+Sea.innerHTML = `
+    <sea class="tooltip">
+        <div class="inner"></div>
+        <div class="arrow"></div>
+    </sea>
+    <sea class='confirm'>
+        <div class="cont">
+            <text class="msg"></text>
+            <div class="btns">
+                <btn class="ok">确定</btn>
+                <btn class="no">取消</btn>
+            </div>
         </div>
-    </div>
     </sea>`.html()
 Sea('body').append(Sea.innerHTML)
 // Html 分页
@@ -33,7 +38,7 @@ Sea.bindEvent = {
             setTimeout(function() {
                 e.removeClass('clicked')
             }, 400)
-            // Sea.confirm('测试') 
+            // Sea.confirm('测试')
         })
         Sea('sea.btn-group').on('mousedown', '.btn', function(event, index) {
             let element = Sea(this)

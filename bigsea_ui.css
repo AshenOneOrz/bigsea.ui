@@ -44,6 +44,17 @@ html {
         filter: blur(0.15rem);
     }
 }
+@keyframes fa-breathe {
+	0% {
+        /* animation: fa-breathe 2s cubic-bezier(0, 0, 0.5, 1) 0s infinite alternate backwards; */
+        opacity: 0;
+    	filter: blur(.25rem);
+	}
+	100% {
+		opacity: 1;
+        filter: blur(0.03rem);
+	}
+}
 
 /* 图标 */
 .fa-spin {
@@ -440,6 +451,7 @@ sea.tooltip.bottomLeft .arrow {
 sea.tooltip.bottomRight .arrow {
   right: 16px;
 }
+
 
 /* 弹窗 */
 sea.confirm {

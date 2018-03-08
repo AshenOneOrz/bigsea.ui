@@ -704,11 +704,11 @@ Sea.static = {
         }
         dict[where || 'bottomLeft']()
         tip.css({
+            opacity: 1,
             top: y + 'px',
             left: x + 'px',
             zIndex: '',
         })
-        tip.css('opacity', 1)
         let recursion = function() {
             Sea(document).one('mousedown', function(event) {
                 let bool = Boolean(Sea(event.target).parent('sea.tooltip').dom)
@@ -725,7 +725,11 @@ Sea.static = {
             })
         }
         setTimeout(function() {
-            recursion()
+            if (tip.css('opacity') === '0') {
+                //
+            } else {
+                recursion()
+            }
         }, 100)
     },
 }

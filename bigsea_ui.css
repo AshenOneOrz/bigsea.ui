@@ -7,7 +7,7 @@ body, button, input, select, textarea {
     font-size: 1rem;
     font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Helvetica,PingFang SC,Hiragino Sans GB,Microsoft YaHei,SimSun,sans-serif;
 }
-html {
+:root {
     font-size: 16px;
     --primary: #1890ff;
     --primary-hover: #40a9ff;
@@ -19,7 +19,7 @@ html {
 }
 
 /* 动画 */
-@keyframes fa-loading {
+@keyframes fa-spin {
      0% {
          -webkit-transform-origin: 50% 50%;
          transform-origin: 50% 50%;
@@ -33,7 +33,7 @@ html {
          transform: rotate(360deg);
      }
 }
-@keyframes fa-button-effect {
+@keyframes fa-button-clicked {
     to {
         opacity: 0;
         top: -0.375rem;
@@ -44,22 +44,20 @@ html {
         filter: blur(0.15rem);
     }
 }
-@keyframes fa-breathe {
-	0% {
-        /* animation: fa-breathe 2s cubic-bezier(0, 0, 0.5, 1) 0s infinite alternate backwards; */
+@keyframes fa-fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
         opacity: 0;
-    	filter: blur(.25rem);
-	}
-	100% {
-		opacity: 1;
-        filter: blur(0.03rem);
-	}
+    }
 }
 
-/* 图标 */
 .fa-spin {
-    -webkit-animation: fa-loading 1s infinite linear;
-    animation: fa-loading 1s infinite linear;
+    animation: fa-spin 1s linear infinite;
+}
+.fa-fadeOut {
+    animation: fa-fadeOut 1s linear forwards;
 }
 .fa-events {
     pointer-events: none;
@@ -138,8 +136,8 @@ sea.btn.clicked:after {
     border-radius: inherit;
     border: 0 solid var(--primary);
     opacity: 0.6;
-    -webkit-animation: fa-button-effect .4s;
-    animation: fa-button-effect .4s;
+    -webkit-animation: fa-button-clicked .4s;
+    animation: fa-button-clicked .4s;
 }
 sea.btn.clicked.danger::after {
     border-color: var(--danger);
@@ -451,7 +449,6 @@ sea.tooltip.bottomLeft .arrow {
 sea.tooltip.bottomRight .arrow {
   right: 16px;
 }
-
 
 /* 弹窗 */
 sea.confirm {

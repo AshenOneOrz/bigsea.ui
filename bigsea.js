@@ -369,12 +369,21 @@ class bigsea {
     blur() {
         this.event('blur')
     }
+    // 触发自定义事件
+    iEvent(name, obj) {
+        let e = new Event(name, {bubbles: true})
+        e.data = obj || {}
+        for (let dom of this.arr) {
+            dom.dispatchEvent(e)
+        }
+    }
 
     // 动画
     animate() {
+        // 清空
         this.arr.forEach(e => {
             for (let cls of e.classList) {
-                if (cls.indexOf('animate-') !== -1) {
+                if (cls.includes('animate-')) {
                     e.classList.remove(cls)
                 }
             }
@@ -671,17 +680,18 @@ Object.keys(Sea.static).forEach(function(k) {
 bigsea.animate = {
     fadeIn(event) {
         let dom = event.target
-        let [display, time, callback] = dom.sea_animate
+        let [display, time, callback] = dom.sea_animate || []
         if (typeof time == 'number') {
             dom.style.animationDuration = ''
         }
         if (typeof callback === 'function') {
             callback()
         }
+        delete dom.sea_animate
     },
     fadeOut(event) {
         let dom = event.target
-        let [time, callbak, show] = dom.sea_animate
+        let [time, callbak, show] = dom.sea_animate || []
         if (typeof time == 'number') {
             dom.style.animationDuration = ''
         }
@@ -691,6 +701,7 @@ bigsea.animate = {
         if (show !== true) {
             Sea(dom).hide()
         }
+        delete dom.sea_animate
     },
 }
 Sea(document).on('animationend', function(event) {

@@ -90,18 +90,19 @@ Sea.bindEvent = {
             if (i <= max) {
                 input.dom.value = i
             }
+            Sea(this).iEvent('jump_page', {jump: i})
         })
         p.find('.previous').on('mousedown', function() {
             let i = Number(input.dom.value) - 1
             if (i > 0) {
                 input.dom.value = i
             }
+            Sea(this).iEvent('jump_page', {jump: i})
         })
         // 触发 jump_page 事件
         p.find('.jump').on('mousedown', function() {
-            let e = new Event('jump_page', {bubbles: true})
-            e.jump = Number(input.dom.value)
-            this.dispatchEvent(e)
+            let i = Number(input.dom.value)
+            Sea(this).iEvent('jump_page', {jump: i})
         })
     },
 }

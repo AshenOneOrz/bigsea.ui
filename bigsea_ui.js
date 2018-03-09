@@ -71,6 +71,9 @@ Sea.bindEvent = {
         let p = Sea('sea.pagination')
         let input = p.find('input')
         input.on('input', function(e) {
+            let p = Sea(this).parent('.pagination')
+            let input = p.find('input')
+            //
             let re = /\D/g
             let val = this.value.replace(re, '')
             let max = Number(p.dom.dataset.max) || 1
@@ -80,27 +83,39 @@ Sea.bindEvent = {
             this.value = val
         })
         input.on('focus', function(e) {
+            let p = Sea(this).parent('.pagination')
+            let input = p.find('input')
+            //
             let max = p.dom.dataset.max || '1'
-            input.dom.placeholder = max
+            this.placeholder = max
             Sea.tooltip(this, `共 ${max} 页`, 'bottom')
         })
         p.find('.next').on('mousedown', function() {
+            let p = Sea(this).parent('.pagination')
+            let input = p.find('input')
+            //
             let max = Number(p.dom.dataset.max) || 1
             let i = Number(input.dom.value) + 1
             if (i <= max) {
                 input.dom.value = i
+                Sea(this).iEvent('jump_page', {jump: i})
             }
-            Sea(this).iEvent('jump_page', {jump: i})
         })
         p.find('.previous').on('mousedown', function() {
+            let p = Sea(this).parent('.pagination')
+            let input = p.find('input')
+            //
             let i = Number(input.dom.value) - 1
             if (i > 0) {
                 input.dom.value = i
+                Sea(this).iEvent('jump_page', {jump: i})
             }
-            Sea(this).iEvent('jump_page', {jump: i})
         })
         // 触发 jump_page 事件
         p.find('.jump').on('mousedown', function() {
+            let p = Sea(this).parent('.pagination')
+            let input = p.find('input')
+            //
             let i = Number(input.dom.value)
             Sea(this).iEvent('jump_page', {jump: i})
         })

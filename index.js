@@ -7,5 +7,5 @@
 // })
 
 Sea('sea.pagination').on('jump_page', function(e) {
-    log(e)
+    log(e.data)
 })

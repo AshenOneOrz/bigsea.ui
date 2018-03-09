@@ -371,115 +371,45 @@ class bigsea {
     }
 
     // 动画
-    animate(obj, time, callback, before) {
-        let that = this
-        if (that.dom.sea_animating) {
-            log('动画未完成')
-        } else {
-            that.dom.sea_animating = true
-            if (typeof before == 'function') { before() }
-            let fps = 60
-            let s = time || 0.4
-            let t = s * 1000 / fps
-            let parseValue = function(val) {
-                let res = {
-                    value: null,
-                    unit: '',
+    animate() {
+        this.arr.forEach(e => {
+            for (let cls of e.classList) {
+                if (cls.indexOf('animate-') !== -1) {
+                    e.classList.remove(cls)
                 }
-                for(var i = 0; i < val.length; i++) {
-                    let e = val[i]
-                    if (!/\d|\./.test(e)) {
-                        res.value = Number(val.slice(0, i))
-                        res.unit = val.slice(i)
-                        break
-                    }
-                }
-                if (res.value == null) {
-                    res.value = Number(val)
-                }
-                return res
             }
-            let dict = {
-                "opacity": 1,
-                "width": {
-                    "%": 100,
-                    "px": that.dom.offsetWidth,
-                },
-            }
-            for (let key in obj) {
-                let o = parseValue(obj[key])
-                let max = dict[key]
-                if (o.unit) {
-                    max = dict[key][o.unit]
-                }
-                let a = 0
-                let b = o.value
-                if (b <= a) {
-                    a = max
-                }
-                // 终止
-                if (window.getComputedStyle(that.dom)[key] == String(b)) {
-                    that.dom.sea_animating = false
-                    break
-                }
-                let op = a > b ? false : true
-                let step = b > 0 ? b / t : a / t
-                let animate_id = setInterval(function() {
-                    let stop = function() {
-                        that.css(key, String(b) + o.unit)
-                        clearInterval(animate_id)
-                        if (typeof callback == 'function') { callback() }
-                        that.dom.sea_animating = false
-                    }
-                    let next = function() {
-                        that.css(key, String(a) + o.unit)
-                    }
-                    if (op) {
-                        if (a > b) {
-                            stop()
-                        } else {
-                            next()
-                        }
-                        a += step
-                    } else {
-                        if (a < b) {
-                            stop()
-                        } else {
-                            next()
-                        }
-                        a -= step
-                    }
-                }, fps)
-            }
-        }
+        })
     }
     // 淡入
-    fadeIn(str, time, callback) {
-        let that = this
+    fadeIn(display, time, callback) {
         // 参数转换
-        if (typeof str === 'number' && callback === undefined) {
+        if (typeof display === 'number' && callback === undefined) {
             callback = time
-            time = str
-            str = undefined
+            time = display
+            display = undefined
         }
-        if (that.isHidden()) {
-            that.animate({
-                "opacity": 1,
-            }, time, callback, function() {
-                that.css("opacity", 0)
-                that.show(str)
+        if (this.isHidden() === true) {
+            this.animate()
+            this.show()
+            this.arr.forEach(e => {
+                e.sea_animate = [display, time, callback]
+                if (typeof time == 'number') {
+                    e.style.animationDuration = String(time) + 's'
+                }
+                e.classList.add('animate-fadeIn')
             })
         }
     }
     // 淡出
     fadeOut(time, callback, show) {
-        let that = this
-        if (that.isHidden() === false) {
-            that.animate({
-                "opacity": 0,
-            }, time, function() {
-                if (typeof callback === 'function') { callback() }
-                if (show === undefined) { that.hide() }
+        if (this.isHidden() === false) {
+            this.animate()
+            this.arr.forEach(e => {
+                e.sea_animate = [time, callback, show]
+                if (typeof time == 'number') {
+                    e.style.animationDuration = String(time) + 's'
+                }
+                e.classList.add('animate-fadeOut')
             })
         }
     }
@@ -616,17 +546,17 @@ Sea.static = {
         }
     },
     // 弹窗
-    confirm(msg, callback) {
-        let e = Sea('sea.confirm')
-        e.show()
-        e.find('btn').removeAttr('style')
-        e.find('.msg').dom.innerText = msg
-        Sea.confirm.callback = callback
-    },
     alert(msg, callback) {
         let e = Sea('sea.confirm')
         e.show()
         e.find('.no').hide()
+        e.find('.msg').dom.innerText = msg
+        Sea.confirm.callback = callback
+    },
+    confirm(msg, callback) {
+        let e = Sea('sea.confirm')
+        e.show()
+        e.find('btn').removeAttr('style')
         e.find('.msg').dom.innerText = msg
         Sea.confirm.callback = callback
     },
@@ -736,6 +666,40 @@ Sea.static = {
 Object.keys(Sea.static).forEach(function(k) {
     Sea[k] = Sea.static[k]
 })
+
+// 动画
+bigsea.animate = {
+    fadeIn(event) {
+        let dom = event.target
+        let [display, time, callback] = dom.sea_animate
+        if (typeof time == 'number') {
+            dom.style.animationDuration = ''
+        }
+        if (typeof callback === 'function') {
+            callback()
+        }
+    },
+    fadeOut(event) {
+        let dom = event.target
+        let [time, callbak, show] = dom.sea_animate
+        if (typeof time == 'number') {
+            dom.style.animationDuration = ''
+        }
+        if (typeof callback === 'function') {
+            callback()
+        }
+        if (show !== true) {
+            Sea(dom).hide()
+        }
+    },
+}
+Sea(document).on('animationend', function(event) {
+    let name = event.animationName.split('animate-')[1] || ""
+    if (bigsea.animate.hasOwnProperty(name)) {
+        bigsea.animate[name](event)
+    }
+})
+
 // Sea.Ajax.help
 Sea.Ajax.help = `// 示例
 Sea.Ajax({

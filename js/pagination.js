@@ -57,7 +57,7 @@ Sea.UIEvent.pagination = function() {
             input.dom.value = `第 ${i} 页`
             Sea(this).iEvent('jump_page', {jump: i})
         } else {
-            Sea(this).tooltip('已经是最后一页了', 'topRight')
+            Sea(this).tooltip('已是最后一页了', 'topRight')
         }
     })
     p.find('.previous').on('mousedown', function() {
@@ -69,7 +69,7 @@ Sea.UIEvent.pagination = function() {
             input.dom.value = `第 ${i} 页`
             Sea(this).iEvent('jump_page', {jump: i})
         } else {
-            Sea(this).tooltip('已经是第一页了')
+            Sea(this).tooltip('已经是第一页了', 'topLeft')
         }
     })
 }

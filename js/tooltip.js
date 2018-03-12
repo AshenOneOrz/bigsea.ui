@@ -4,8 +4,9 @@ Sea.innerHTML = `
         <div class="arrow"></div>
     </sea>`
 Sea('body').append(Sea.innerHTML)
-// 
-Sea.tooltip = function(dom, html, where) {
+//
+bigsea.prototype.tooltip = function(html, where) {
+    let dom = this.dom
     let tip = Sea('sea.tooltip')
     let arr = [dom.offsetLeft, dom.offsetTop, dom.offsetWidth, dom.offsetHeight]
     let [x, y, w, h] = arr.map(function(e) {
@@ -14,6 +15,11 @@ Sea.tooltip = function(dom, html, where) {
     tip.find('.inner').html(html)
     tip.w = tip.dom.offsetWidth
     tip.h = tip.dom.offsetHeight
+    for (let cls of tip.dom.classList) {
+        if (cls !== 'tooltip') {
+            tip.dom.classList.remove(cls)
+        }
+    }
     let dict = {
         top() {
             tip.addClass('top')

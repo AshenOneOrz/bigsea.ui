@@ -422,6 +422,11 @@ class bigsea {
             })
         }
     }
+
+    // UI 配合
+    
+    // 文字提示
+    tooltip() {}
 }
 // Sea
 const Sea = function(select) {
@@ -554,15 +559,15 @@ Sea.static = {
             throw "参数错误 Sea.has(obj, 'a.b.c')"
         }
     },
+
     // UI 配合
+
     // 事件
     UIEvent: {},
     // 弹窗提示
     alert: null,
     // 弹窗确认
     confirm: null,
-    // 文字提示
-    tooltip: null,
 }
 Object.keys(Sea.static).forEach(function(k) {
     Sea[k] = Sea.static[k]

@@ -2,7 +2,7 @@
 sea.tooltip {
     opacity: 0;
     margin: 8px;
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     display: flex;

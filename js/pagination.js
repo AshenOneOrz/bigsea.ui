@@ -9,7 +9,7 @@ Sea.innerHTML = `
         <i class="iconfont icon-right"></i>
     </sea>`.html()
 Sea('sea.pagination').html(Sea.innerHTML)
-// 
+//
 Sea.UIEvent.pagination = function() {
     let p = Sea('sea.pagination')
     let input = p.find('input')
@@ -30,7 +30,7 @@ Sea.UIEvent.pagination = function() {
         //
         let max = p.dom.dataset.max || '1'
         this.placeholder = max
-        Sea.tooltip(this, `共 ${max} 页`, 'bottom')
+        Sea(this).tooltip(`共 ${max} 页`, 'top')
     })
     input.on('blur', function(e) {
         // 触发 jump_page 事件
@@ -39,11 +39,9 @@ Sea.UIEvent.pagination = function() {
         Sea(this).iEvent('jump_page', {jump: i})
     })
     input.on('keydown', function(e) {
-        //
         if (e.keyCode === 13) {
             this.blur()
         } else if (e.keyCode === 8) {
-            //
             let val = this.value.replace(/\D/g, '').slice(0, -1)
             this.value = `第 ${val} 页`
         }
@@ -58,6 +56,8 @@ Sea.UIEvent.pagination = function() {
         if (i <= max) {
             input.dom.value = `第 ${i} 页`
             Sea(this).iEvent('jump_page', {jump: i})
+        } else {
+            Sea(this).tooltip('已经是最后一页了', 'topRight')
         }
     })
     p.find('.previous').on('mousedown', function() {
@@ -68,6 +68,8 @@ Sea.UIEvent.pagination = function() {
         if (i > 0) {
             input.dom.value = `第 ${i} 页`
             Sea(this).iEvent('jump_page', {jump: i})
+        } else {
+            Sea(this).tooltip('已经是第一页了')
         }
     })
 }

@@ -18,6 +18,18 @@ body, button, input, select, textarea {
     --disabled-color: rgba(0, 0, 0, 0.25);
 }
 
+a {
+    color: var(--primary);
+    background-color: transparent;
+    text-decoration: none;
+    outline: none;
+    cursor: pointer;
+    -webkit-transition: color .4s;
+    transition: color .4s;
+}
+a:hover {
+    color: var(--primary-hover);
+}
 .iconfont {
     display: inline-block;
     vertical-align: baseline;
@@ -27,17 +39,9 @@ body, button, input, select, textarea {
     text-rendering: optimizeLegibility;
     -moz-osx-font-smoothing: grayscale;
 }
-a {
-    color: #1890ff;
-    background-color: transparent;
-    text-decoration: none;
-    outline: none;
-    cursor: pointer;
-    -webkit-transition: color .4s;
-    transition: color .4s;
-}
-a:hover {
-    color: #40a9ff;
+sea {
+    display: inline-flex;
+    align-items: center;
 }
 
 /* 动画 */
@@ -100,7 +104,6 @@ sea.btn {
     cursor: pointer;
     white-space: nowrap;
 
-    display: inline-flex;
     justify-content: center;
     align-items: center;
 
@@ -150,8 +153,8 @@ sea.btn.checked {
     z-index: 1;
 }
 sea.btn.primary.checked {
-    background: #40a9ff;
-    border-color: #40a9ff;
+    background: var(--primary-hover);
+    border-color: var(--primary-hover);
     color: #fff;
     z-index: 1;
 }
@@ -235,13 +238,10 @@ sea.input-group.sm > sea.btn > .iconfont, sea.btn-group.sm sea.btn > .iconfont {
   font-size: 14px;
 }
 
-sea.btn-group {
-    display: inline-flex;
-}
-sea.btn-group .primary:not(:first-child) {
+
+sea.btn-group > .primary:not(:first-child) {
     border-left-color: var(--primary-hover);
 }
-
 sea.btn-group > :first-child:not(:last-child) {
     border-bottom-right-radius: 0;
     border-top-right-radius: 0;
@@ -303,9 +303,6 @@ sea.btn[disabled] {
 }
 
 /* 输入框 */
-sea.input-group {
-    display: inline-flex;
-}
 sea.input-group > input {
     list-style: none;
     position: relative;
@@ -327,7 +324,7 @@ sea.input-group > input:hover {
     border-color: var(--primary-hover);
 }
 sea.input-group > input:focus {
-    border-color: var(--primary-hover);
+    border-color: var(--primary-active);
     outline: 0;
 }
 sea.input-group > input::-moz-placeholder {
@@ -373,8 +370,14 @@ sea.input-group > :hover, sea.input-group :focus, sea.input-group :active {
 sea.pagination {
     display: flex;
 }
+sea.pagination > sea.btn {
+    width: 32px;
+    height: 32px;
+    margin-right: 8px;
+}
 sea.pagination input {
-    width: 3rem;
+    width: 8rem;
+    margin-right: 8px;
     text-align: center;
 }
 
@@ -494,7 +497,7 @@ sea.breadcrumb a {
     color: rgba(0, 0, 0, 0.45);
 }
 sea.breadcrumb a:hover {
-    color: #40a9ff;
+    color: var(--primary-hover);
 }
 sea.breadcrumb li {
     display: inline-flex;

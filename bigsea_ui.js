@@ -72,7 +72,6 @@ Sea.bindEvent = {
         let input = p.find('input')
         input.on('input', function(e) {
             let p = Sea(this).parent('.pagination')
-            let input = p.find('input')
             //
             let re = /\D/g
             let val = this.value.replace(re, '')
@@ -80,6 +79,7 @@ Sea.bindEvent = {
             if (Number(val) > max) {
                 val = max
             }
+
             this.value = val
         })
         input.on('focus', function(e) {
@@ -90,6 +90,13 @@ Sea.bindEvent = {
             this.placeholder = max
             Sea.tooltip(this, `共 ${max} 页`, 'bottom')
         })
+        input.on('keydown', function(e) {
+            if (e.keyCode === 13) {
+                let p = Sea(this).parent('.pagination')
+                p.find('.jump').click()
+            }
+        })
+
         p.find('.next').on('mousedown', function() {
             let p = Sea(this).parent('.pagination')
             let input = p.find('input')
@@ -112,7 +119,7 @@ Sea.bindEvent = {
             }
         })
         // 触发 jump_page 事件
-        p.find('.jump').on('mousedown', function() {
+        p.find('.jump').on('click', function() {
             let p = Sea(this).parent('.pagination')
             let input = p.find('input')
             //

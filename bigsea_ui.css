@@ -18,6 +18,28 @@ body, button, input, select, textarea {
     --disabled-color: rgba(0, 0, 0, 0.25);
 }
 
+.iconfont {
+    display: inline-block;
+    vertical-align: baseline;
+    text-align: center;
+    text-transform: none;
+    line-height: 1;
+    text-rendering: optimizeLegibility;
+    -moz-osx-font-smoothing: grayscale;
+}
+a {
+    color: #1890ff;
+    background-color: transparent;
+    text-decoration: none;
+    outline: none;
+    cursor: pointer;
+    -webkit-transition: color .4s;
+    transition: color .4s;
+}
+a:hover {
+    color: #40a9ff;
+}
+
 /* 动画 */
 @keyframes animate-buttonClicked {
     to {
@@ -96,7 +118,7 @@ sea.btn {
     border: 0.0625rem solid transparent;
 
     font-weight: 400;
-    color: rgba(0, 0, 0, 0.65);
+    color: rgba(0, 0, 0, 0.75);
     background-color: #fff;
     border-color: var(--primary-border);
 
@@ -457,6 +479,36 @@ sea.tooltip.bottomLeft .arrow {
 }
 sea.tooltip.bottomRight .arrow {
   right: 16px;
+}
+
+/* 面包屑 */
+sea.breadcrumb {
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    color: rgba(0, 0, 0, 0.45);
+}
+sea.breadcrumb a {
+    color: rgba(0, 0, 0, 0.45);
+}
+sea.breadcrumb a:hover {
+    color: #40a9ff;
+}
+sea.breadcrumb li {
+    display: inline-flex;
+}
+sea.breadcrumb > li + li:before {
+    color: #CCCCCC;
+    content: "/ ";
+    padding: 0 5px;
+}
+sea.breadcrumb > li:last-child {
+    color: rgba(0, 0, 0, 0.65);
+}
+sea.breadcrumb > li .iconfont + text {
+    margin-left: 4px;
 }
 
 /* 弹窗 */

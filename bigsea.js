@@ -370,8 +370,8 @@ class bigsea {
         this.event('blur')
     }
     // 触发自定义事件
-    iEvent(name, obj) {
-        let e = new Event(name, {bubbles: true})
+    iEvent(name, obj, bubble) {
+        let e = new Event(name, {bubbles: bubble || true})
         e.data = obj || {}
         for (let dom of this.arr) {
             dom.dispatchEvent(e)

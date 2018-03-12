@@ -1,0 +1,45 @@
+sea.table {
+    display: flex;
+}
+sea.table > table {
+    font-size: 14px;
+    width: 100%;
+
+    border-collapse: separate;
+    border-spacing: 0;
+    text-align: left;
+    border-radius: 4px;
+
+    line-height: 1.5;
+    color: rgba(0, 0, 0, 0.65);
+    margin: 0;
+    padding: 0;
+    position: relative;
+    clear: both;
+}
+sea.table td {
+    border-bottom: 1px solid #eee;
+}
+sea.table td, sea.table th {
+    padding: 1rem;
+    vertical-align: middle;
+}
+sea.table thead > tr, sea.table tbody > tr {
+    -webkit-transition: all .3s;
+    transition: all .3s;
+}
+sea.table thead > tr > th {
+    background: #fafafa;
+    color: rgba(0, 0, 0, 0.85);
+    font-weight: 500;
+    border-bottom: 1px solid #eee;
+}
+sea.table tbody > tr:nth-child(2n) {
+    background-color: rgba(102,128,153,.05);
+}
+sea.table tbody > tr:hover {
+    background-color: #e6f7ff;
+}
+/* sea.table td + td, sea.table th + th {
+    border-left: 1px solid #eee;
+} */

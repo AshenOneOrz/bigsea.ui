@@ -1,0 +1,14 @@
+/* 分页 */
+sea.pagination {
+    display: flex;
+}
+sea.pagination > sea.btn {
+    width: 32px;
+    height: 32px;
+    margin-right: 8px;
+}
+sea.pagination input {
+    width: 8rem;
+    margin-right: 8px;
+    text-align: center;
+}

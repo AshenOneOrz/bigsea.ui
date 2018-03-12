@@ -1,0 +1,29 @@
+/* 面包屑 */
+sea.breadcrumb {
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    color: rgba(0, 0, 0, 0.45);
+}
+sea.breadcrumb a {
+    color: rgba(0, 0, 0, 0.45);
+}
+sea.breadcrumb a:hover {
+    color: var(--primary-hover);
+}
+sea.breadcrumb li {
+    display: inline-flex;
+}
+sea.breadcrumb > li + li:before {
+    color: #CCCCCC;
+    content: "/ ";
+    padding: 0 5px;
+}
+sea.breadcrumb > li:last-child {
+    color: rgba(0, 0, 0, 0.65);
+}
+sea.breadcrumb > li .iconfont + text {
+    margin-left: 4px;
+}

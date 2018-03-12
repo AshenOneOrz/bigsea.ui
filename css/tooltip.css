@@ -1,0 +1,102 @@
+/* 提示 */
+sea.tooltip {
+    opacity: 0;
+    margin: 8px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    z-index: 101;
+}
+sea.tooltip .inner {
+    font-size: 14px;
+    align-items: center;
+    min-width: 40px;
+    max-width: 250px;
+    min-height: 32px;
+    padding: 6px 8px;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.75);
+    border-radius: 4px;
+    -webkit-box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+sea.tooltip .arrow {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-color: transparent;
+    border-style: solid;
+}
+
+sea.tooltip.top .arrow,
+sea.tooltip.topLeft .arrow,
+sea.tooltip.topRight .arrow {
+    bottom: -5px;
+    border-width: 5px 5px 0;
+    border-top-color: rgba(0, 0, 0, 0.75);
+}
+sea.tooltip.top .arrow {
+  left: 50%;
+  margin-left: -5px;
+}
+sea.tooltip.topLeft .arrow {
+  left: 16px;
+}
+sea.tooltip.topRight .arrow {
+  right: 16px;
+}
+
+sea.tooltip.right .arrow,
+sea.tooltip.rightTop .arrow,
+sea.tooltip.rightBottom .arrow {
+  left: -5px;
+  border-width: 5px 5px 5px 0;
+  border-right-color: rgba(0, 0, 0, 0.75);
+}
+sea.tooltip.right .arrow {
+  top: 50%;
+  margin-top: -5px;
+}
+sea.tooltip.rightTop .arrow {
+  top: 8px;
+}
+sea.tooltip.rightBottom .arrow {
+  bottom: 8px;
+}
+
+sea.tooltip.left .arrow,
+sea.tooltip.leftTop .arrow,
+sea.tooltip.leftBottom .arrow {
+  right: -5px;
+  border-width: 5px 0 5px 5px;
+  border-left-color: rgba(0, 0, 0, 0.75);
+}
+sea.tooltip.left .arrow {
+  top: 50%;
+  margin-top: -5px;
+}
+sea.tooltip.leftTop .arrow {
+  top: 8px;
+}
+sea.tooltip.leftBottom .arrow {
+  bottom: 8px;
+}
+
+sea.tooltip.bottom .arrow,
+sea.tooltip.bottomLeft .arrow,
+sea.tooltip.bottomRight .arrow {
+  top: -5px;
+  border-width: 0 5px 5px;
+  border-bottom-color: rgba(0, 0, 0, 0.75);
+}
+sea.tooltip.bottom .arrow {
+  left: 50%;
+  margin-left: -5px;
+}
+sea.tooltip.bottomLeft .arrow {
+  left: 16px;
+}
+sea.tooltip.bottomRight .arrow {
+  right: 16px;
+}

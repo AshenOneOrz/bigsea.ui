@@ -3,8 +3,14 @@
 <head>
     <meta charset="utf-8">
     <title>Test</title>
-    <link href="bigsea_ui_icon.css" rel="stylesheet">
-    <link href="bigsea_ui.css" rel="stylesheet">
+    <link name="图标"   href="css/icon.css" rel="stylesheet">
+    <link name="公共"   href="css/public.css" rel="stylesheet">
+    <link name="动画"   href="css/animate.css" rel="stylesheet">
+    <link name="按钮"   href="css/btn.css" rel="stylesheet">
+    <link name="输入"   href="css/input.css" rel="stylesheet">
+    <link name="提示"   href="css/tooltip.css" rel="stylesheet">
+    <link name="面包屑" href="css/breadcrumb.css" rel="stylesheet">
+    <link name="分页"   href="css/pagination.css" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <style>
         .demo {
@@ -91,10 +97,41 @@
             <li>Application</li>
         </sea>
     </div>
+    <div class="demo">
+        <h1>表格</h1>
+        <sea class="table">
+            <table>
+                <thead>
+                    <tr>
+                        <th><input type="checkbox"></th><th>单位</th><th>描述</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="checkbox"></td><td>0px;</td><td>外边距</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td><td>0px;</td><td>边框</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td><td>0px;</td><td>内边距</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td><td>80%;</td><td>宽</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td><td>100%;</td><td>高</td>
+                    </tr>
+                </tbody>
+            </table>
+        </sea>
+    </div>
     <!-- js -->
-    <script src="bigsea.js"></script>
-    <script src="bigsea_ui.js"></script>
-    <script src="index.js"></script>
-
+    <script name="大海" src="bigsea.js"></script>
+    <script name="按钮" src="js/btn.js"></script>
+    <script name="弹窗" src="js/confirm.js"></script>
+    <script name="分页" src="js/pagination.js"></script>
+    <script name="提示" src="js/tooltip.js"></script>
+    <script name="测试" src="bigsea_ui.js"></script>
 </body>
 </html>

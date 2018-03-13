@@ -37,12 +37,11 @@ vip/Tom.js 下面可以自由发挥
 # bigsea.js 说明
 (Query 操作基本一致)
 
-```js
-// 定义好的函数：
+
+定义好的函数：
 log() ensure() cut()
-// CSS选择器 或 DOM元素 返回 sea 对象
-Sea(select)
-```
+
+Sea(CSS选择器 或 DOM元素) 返回 sea 对象
 
 |原型链方法|说明|
 |:-|:-:|

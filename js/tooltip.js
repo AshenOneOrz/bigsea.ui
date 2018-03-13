@@ -87,7 +87,7 @@ bigsea.prototype.tooltip = function(html, where) {
         opacity: 1,
         top: y + 'px',
         left: x + 'px',
-        zIndex: '',
+        zIndex: 101,
     })
     let recursion = function() {
         Sea(document).one('mousedown', function(event) {

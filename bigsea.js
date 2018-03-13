@@ -155,12 +155,13 @@ class bigsea {
         }
         return this
     }
-    // 触发事件
-    event(name) {
-        let event = document.createEvent("HTMLEvents")
-        // 事件名称 冒泡 可以取消
-        event.initEvent(name, true, true)
-        this.dom.dispatchEvent(event)
+    // 触发自定义事件
+    iEvent(name, obj, bubble) {
+        let e = new Event(name, {bubbles: bubble || true})
+        e.data = obj || {}
+        for (let dom of this.arr) {
+            dom.dispatchEvent(e)
+        }
     }
 
     // 显示
@@ -363,19 +364,11 @@ class bigsea {
     }
     // 获得焦点
     focus() {
-        this.event('focus')
+        this.dom.focus()
     }
     // 失去焦点
     blur() {
-        this.event('blur')
-    }
-    // 触发自定义事件
-    iEvent(name, obj, bubble) {
-        let e = new Event(name, {bubbles: bubble || true})
-        e.data = obj || {}
-        for (let dom of this.arr) {
-            dom.dispatchEvent(e)
-        }
+        this.dom.blur()
     }
 
     // 动画
@@ -424,7 +417,7 @@ class bigsea {
     }
 
     // UI 配合
-    
+
     // 文字提示
     tooltip() {}
 }
@@ -568,6 +561,8 @@ Sea.static = {
     alert: null,
     // 弹窗确认
     confirm: null,
+    // 表格
+    table: null,
 }
 Object.keys(Sea.static).forEach(function(k) {
     Sea[k] = Sea.static[k]
@@ -627,6 +622,6 @@ callback: 回调函数 Function
 cors: 跨域地址 String (url 填自己服务器接口)`
 
 // 其它
-window.eval = undefined
+// window.eval = undefined
 window.$ = window.jQuery ? $ : Sea
 ;

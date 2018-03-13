@@ -31,7 +31,7 @@ sea.table thead > tr, sea.table tbody > tr {
 sea.table thead > tr > th {
     background: #fafafa;
     color: rgba(0, 0, 0, 0.85);
-    font-weight: 500;
+    font-weight: 600;
     border-bottom: 1px solid #eee;
 }
 sea.table tbody > tr:nth-child(2n) {

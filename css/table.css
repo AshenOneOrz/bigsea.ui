@@ -18,7 +18,7 @@ sea.table > table {
     clear: both;
 }
 sea.table td {
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #e8e8e8;
 }
 sea.table td, sea.table th {
     padding: 1rem;
@@ -29,19 +29,19 @@ sea.table thead > tr, sea.table tbody > tr {
     transition: all .3s;
 }
 sea.table thead {
-    background: #fafafa;
+    background: #f4f4f4;
     color: rgba(0, 0, 0, 0.85);
     font-weight: 600;
 }
 sea.table thead > tr > th {
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #e8e8e8;
 }
 sea.table tbody > tr:nth-child(2n) {
-    background-color: rgba(102,128,153,.05);
+    background-color: #fafafa;
 }
 sea.table tbody > tr:hover {
     background-color: #e6f7ff;
 }
 /* sea.table td + td, sea.table th + th {
-    border-left: 1px solid #eee;
+    border-left: 1px solid #e8e8e8;
 } */

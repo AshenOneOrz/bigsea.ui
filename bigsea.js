@@ -138,6 +138,16 @@ class bigsea {
             }
         }
     }
+    ob(options, callback) {
+        // www.cnblogs.com/jscode/p/3600060.html
+        let _callback = (e) => {
+            callback.bind(this.dom)(e[0])
+        }
+        let listen = new MutationObserver(_callback)
+        for (let dom of this.arr) {
+            listen.observe(dom, options)
+        }
+    }
     // 一次性事件 (绑定/委托)
     one(name, select, callback) {
         this.on(name, select, callback, true)
@@ -562,7 +572,7 @@ Sea.static = {
     // 弹窗确认
     confirm: null,
     // 表格
-    table: null,
+    table: {},
 }
 Object.keys(Sea.static).forEach(function(k) {
     Sea[k] = Sea.static[k]

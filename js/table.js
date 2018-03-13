@@ -1,13 +1,11 @@
 Sea.UIEvent.table = function() {
-    // let callback =function() {
-    //         log(123)
-    // }
-    // let listen = new MutationObserver(callback)
-    //
-    // listen.observe(Sea('sea.table').dom, {
-    //     attributes: true,
-    // })
-    // Sea('sea.table').ob({attributes: true}, function() {
-    //     log(123)
-    // })
+    let options = {
+        attributes: true,
+        attributeOldValue: true,
+        attributeFilter: ["data-data"],
+    }
+    Sea('sea.table').ob(options, function(event) {
+        log(event)
+        log(this)
+    })
 }

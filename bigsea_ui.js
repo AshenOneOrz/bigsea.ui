@@ -13,3 +13,11 @@ Object.keys(Sea.UIEvent).forEach(key => {
 //         Sea('input').fadeOut()
 //     }
 // })
+Sea.table.test = {
+    thead: ['姓名', '年龄', '住址'],
+    tbody: [
+        ['胡彦兵', '32', '西湖区湖底公园1号'],
+        ['吴彦祖', '42', '西湖区湖底公园1号'],
+    ],
+}
+Sea('sea.table.test').dom.dataset.data = 'Sea.table.test'

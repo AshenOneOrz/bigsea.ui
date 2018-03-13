@@ -8,7 +8,7 @@ sea.table > table {
     border-collapse: separate;
     border-spacing: 0;
     text-align: left;
-    border-radius: 4px;
+    border-radius: 4px 0 0 4px;
 
     line-height: 1.5;
     color: rgba(0, 0, 0, 0.65);
@@ -28,10 +28,12 @@ sea.table thead > tr, sea.table tbody > tr {
     -webkit-transition: all .3s;
     transition: all .3s;
 }
-sea.table thead > tr > th {
+sea.table thead {
     background: #fafafa;
     color: rgba(0, 0, 0, 0.85);
     font-weight: 600;
+}
+sea.table thead > tr > th {
     border-bottom: 1px solid #eee;
 }
 sea.table tbody > tr:nth-child(2n) {

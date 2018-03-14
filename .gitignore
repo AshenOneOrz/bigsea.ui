@@ -1,2 +1,6 @@
-# MacOS
+# mac
 .DS_Store
+
+# node
+node_modules
+/yarn.lock

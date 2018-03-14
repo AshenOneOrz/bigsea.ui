@@ -1,13 +1,14 @@
 ```
-bigsea_ui.js 包含 js 和 css 两部分
+bigsea_ui.js 包含 js css html 三部分
 vip 文件夹下是测试 js 文件
 
 注意：
-每个人只能修改自己认领组件的 JS 和 CSS
+每个人只能修改自己认领组件的 JS HTML 和 CSS
 例如 Tom 认领 switch 开关组件：
 他可修改的范围
 js/switch.js
 css/switch.css
+html/switch.html
 vip/Tom.js
 
 设计方面 照搬ant.design

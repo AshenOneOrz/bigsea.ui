@@ -1,9 +1,10 @@
-- bigsea_ui.js 包含 js 和 css 两部分
-- vip 文件夹下是测试 js 文件
+```
+bigsea_ui.js 包含 js 和 css 两部分
+vip 文件夹下是测试 js 文件
 
 注意：
 每个人只能修改自己认领组件的 JS 和 CSS
-例如TOM认领switch 开关组件：
+例如 Tom 认领 switch 开关组件：
 他可修改的范围
 js/switch.js
 css/switch.css
@@ -12,6 +13,7 @@ vip/Tom.js
 设计方面 照搬ant.design
 先实现
 能做的和ant.design一样已经是业界标杆了
+```
 
 ---
 
@@ -23,8 +25,15 @@ vip/Tom.js
 |导航菜单|menu|开发中|
 
 # Tom
+|名称|英文|完成|
+|:-|:-|:-:|
+|||开发中|
+
 
 # Demoisellek
+|名称|英文|完成|
+|:-|:-|:-:|
+|||开发中|
 
 # 大海
 |名称|英文|完成|

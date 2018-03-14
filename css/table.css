@@ -1,5 +1,7 @@
 sea.table {
     display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 sea.table > table {
     font-size: 14px;
@@ -12,7 +14,7 @@ sea.table > table {
 
     line-height: 1.5;
     color: rgba(0, 0, 0, 0.65);
-    margin: 0;
+    /* margin: 0; */
     padding: 0;
     position: relative;
     clear: both;

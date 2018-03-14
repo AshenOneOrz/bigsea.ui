@@ -138,6 +138,9 @@ sea.input-group.sm > sea.btn > .iconfont, sea.btn-group.sm sea.btn > .iconfont {
   font-size: 14px;
 }
 
+sea.input-group, sea.btn-group, sea.btn {
+    vertical-align: middle;
+}
 
 sea.btn-group > .primary:not(:first-child) {
     border-left-color: var(--primary-hover);

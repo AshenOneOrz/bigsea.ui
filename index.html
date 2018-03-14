@@ -39,9 +39,9 @@
     </sea>
     <sea class="btn danger lg">Danger</sea>
     <sea class="btn-group">
-        <sea class="btn">全部</sea>
-        <sea class="btn">进行中</sea>
-        <sea class="btn">已结束</sea>
+        <sea class="btn">Large</sea>
+        <sea class="btn">Default</sea>
+        <sea class="btn">Small</sea>
     </sea>
     <sea class="btn-group">
         <sea class="btn primary">
@@ -112,7 +112,36 @@
 </div>
 <div class="demo" name="表格">
     <h2>表格</h2>
-    <sea class="table test" data-key=""></sea>
+    <style>
+        sea.table > .filter, sea.table > sea.pagination {
+            display: flex;
+            justify-content: flex-end;
+            width: 100%;
+        }
+        sea.table > * + * {
+            margin-top: 1rem;
+        }
+        sea.table > .filter > * + * {
+            margin-left: 15px;
+        }
+    </style>
+    <sea class="table test" data-key="">
+        <div class="filter">
+            <sea class="btn-group">
+                <sea class="btn">全部</sea>
+                <sea class="btn">进行中</sea>
+                <sea class="btn">已结束</sea>
+            </sea>
+            <sea class="input-group">
+                <input value="" placeholder="请输入">
+                <sea class="btn">
+                    <i class="iconfont icon-search"></i>
+                </sea>
+            </sea>
+        </div>
+        <table></table>
+        <sea class="pagination" data-max="1024"></sea>
+    </sea>
 </div>
 <div class="demo" name="文字提示">
 </div>

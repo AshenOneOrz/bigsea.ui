@@ -23,6 +23,7 @@ Sea.UIEvent.table = function() {
         })
         tbody += '</thead>'
         let html = `<table>${thead}${tbody}</table>`
-        this.innerHTML = html
+        log(Sea(this).find('table'))
+        Sea(this).find('table').html(html)
     })
 }

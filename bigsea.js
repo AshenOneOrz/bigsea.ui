@@ -68,26 +68,18 @@ class bigsea {
         }
         this.dom = this.arr[0]
     }
-    // 样式
-    css(obj, val) {
-        let set = (k, v) => {
-            for (let e of this.arr) {
-                e.style[k] = String(v)
-            }
+    // 观察者
+    ob(options, callback) {
+        // www.cnblogs.com/jscode/p/3600060.html
+        let _callback = (e) => {
+            callback.bind(this.dom)(e[0])
         }
-        if (typeof obj === 'string') {
-            if (val === undefined) {
-                return window.getComputedStyle(this.dom)[obj]
-            } else {
-                set(obj, val)
-            }
-        } else {
-            for(let key in obj) {
-                set(key, obj[key])
-            }
+        let listen = new MutationObserver(_callback)
+        for (let dom of this.arr) {
+            listen.observe(dom, options)
         }
-        return this
     }
+    
     // 事件 (绑定/委托)
     on(names, select, callback, one) {
         let off = function(e, arr) {
@@ -138,16 +130,6 @@ class bigsea {
             }
         }
     }
-    ob(options, callback) {
-        // www.cnblogs.com/jscode/p/3600060.html
-        let _callback = (e) => {
-            callback.bind(this.dom)(e[0])
-        }
-        let listen = new MutationObserver(_callback)
-        for (let dom of this.arr) {
-            listen.observe(dom, options)
-        }
-    }
     // 一次性事件 (绑定/委托)
     one(name, select, callback) {
         this.on(name, select, callback, true)
@@ -174,6 +156,26 @@ class bigsea {
         }
     }
 
+    // 样式
+    css(obj, val) {
+        let set = (k, v) => {
+            for (let e of this.arr) {
+                e.style[k] = String(v)
+            }
+        }
+        if (typeof obj === 'string') {
+            if (val === undefined) {
+                return window.getComputedStyle(this.dom)[obj]
+            } else {
+                set(obj, val)
+            }
+        } else {
+            for(let key in obj) {
+                set(key, obj[key])
+            }
+        }
+        return this
+    }
     // 显示
     show(str) {
         for (let e of this.arr) {

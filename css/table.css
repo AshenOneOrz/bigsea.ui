@@ -8,16 +8,17 @@ sea.table > table {
     width: 100%;
 
     border-collapse: separate;
+    border: 1px solid #e8e8e8;
     border-spacing: 0;
     text-align: left;
-    border-radius: 4px 0 0 4px;
+    border-radius: .25rem;
 
     line-height: 1.5;
     color: rgba(0, 0, 0, 0.65);
     position: relative;
 }
 sea.table td {
-    border-bottom: 1px solid #e8e8e8;
+    border-top: 1px solid #e8e8e8;
 }
 sea.table td, sea.table th {
     padding: 1rem;
@@ -29,13 +30,13 @@ sea.table thead > tr, sea.table tbody > tr {
     transition: all .3s;
 }
 sea.table thead {
-    background: #f4f4f4;
+    background: #fafafa;
     color: rgba(0, 0, 0, 0.85);
     font-weight: 600;
 }
-sea.table thead > tr > th {
+/* sea.table thead > tr > th {
     border-bottom: 1px solid #e8e8e8;
-}
+} */
 sea.table tbody > tr:nth-child(2n) {
     background-color: #fafafa;
 }

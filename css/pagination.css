@@ -1,7 +1,7 @@
 /* 分页 */
-sea.pagination {
+/* sea.pagination {
     display: flex;
-}
+} */
 sea.pagination > sea.btn {
     width: 32px;
     height: 32px;

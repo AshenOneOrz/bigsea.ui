@@ -1,21 +1,24 @@
-<h2>表格</h2>
+<h2><a target="_blank" href="https://ant.design/components/table-cn/">表格</a></h2>
 
 <style>
-    sea.table > .filter, sea.table > sea.pagination {
+    sea.table.test > .filter, sea.table.test > sea.pagination {
         display: flex;
         justify-content: flex-end;
         width: 100%;
     }
-    sea.table > * + * {
+    sea.table.test > * + * {
         margin-top: 1rem;
     }
-    sea.table > .filter > * + * {
+    sea.table.test > .filter > * + * {
         margin-left: 15px;
     }
-    sea.table table img {
+    sea.table.test table img {
         width: 48px;
         height: 48px;
         object-fit: cover;
+    }
+    sea.table.test table img + text {
+        margin-left: 8px;
     }
 </style>
 <sea class="table test" data-key="">

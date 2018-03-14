@@ -43,6 +43,6 @@ vip/Tom.js
 |按钮|button|完成|
 |分页|pagination|完成|
 |图标|icon|完成|
-|输入|input|完成|
-|提示|tooltop|完成|
+|输入框|input|完成|
+|文字提示|tooltip|完成|
 |表格|table|开发中|  

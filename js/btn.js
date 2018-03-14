@@ -1,5 +1,5 @@
 Sea.UIEvent.btn = function() {
-    Sea('sea.btn').on('mousedown', function(event) {
+    Sea(document).on('mousedown', 'sea.btn',function(event) {
         let e = Sea(this)
         e.addClass('clicked')
         setTimeout(function() {

@@ -1,3 +1,53 @@
 <h2>
     <a href="https://ant.design/components/tooltip-cn/" target="_blank">文字提示</a>
 </h2>
+
+<style>
+    .test-tooltip {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        justify-content: space-between;
+    }
+    .test-tooltip sea.btn {
+        width: 6rem;
+    }
+    .test-tooltip .hide {
+        opacity: 0;
+        pointer-events: none;
+    }
+</style>
+<div class="test-tooltip">
+    <div class="">
+        <sea class="btn">topLeft</sea>
+        <sea class="btn">top</sea>
+        <sea class="btn">topRight</sea>
+    </div>
+    <div class="">
+        <sea class="btn">leftTop</sea>
+        <sea class="btn hide"></sea>
+        <sea class="btn hide"></sea>
+        <sea class="btn hide"></sea>
+        <sea class="btn">rightTop</sea>
+    </div>
+    <div class="">
+        <sea class="btn">left</sea>
+        <sea class="btn hide"></sea>
+        <sea class="btn hide"></sea>
+        <sea class="btn hide"></sea>
+        <sea class="btn">right</sea>
+    </div>
+    <div class="">
+        <sea class="btn">leftBottom</sea>
+        <sea class="btn hide"></sea>
+        <sea class="btn hide"></sea>
+        <sea class="btn hide"></sea>
+        <sea class="btn">rightBottom</sea>
+    </div>
+    <div class="">
+        <sea class="btn">bottomLeft</sea>
+        <sea class="btn">bottom</sea>
+        <sea class="btn">bottomRight</sea>
+    </div>
+</div>

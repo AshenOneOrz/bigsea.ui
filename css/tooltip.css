@@ -62,7 +62,7 @@ sea.tooltip.rightTop .arrow {
   top: 8px;
 }
 sea.tooltip.rightBottom .arrow {
-  bottom: 8px;
+  top: 8px;
 }
 
 sea.tooltip.left .arrow,
@@ -80,7 +80,7 @@ sea.tooltip.leftTop .arrow {
   top: 8px;
 }
 sea.tooltip.leftBottom .arrow {
-  bottom: 8px;
+  top: 8px;
 }
 
 sea.tooltip.bottom .arrow,

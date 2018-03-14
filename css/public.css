@@ -1,6 +1,5 @@
 /* 公共 css */
-*, *::before, *::after {
-    -webkit-box-sizing: border-box;
+*, :after, :before {
     box-sizing: border-box;
 }
 body, button, input, select, textarea {

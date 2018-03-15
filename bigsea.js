@@ -15,24 +15,7 @@ String.prototype.css = function() {
     })
     return this.replace(css, arr.join(''))
 }
-// 去除首尾空格
-String.prototype.strip = function() {
-    let a = 0
-    while (a < this.length) {
-        if (/\S/.test(this[a])) {
-            break
-        }
-        a++
-    }
-    let b = this.length - 1
-    while (b >= 0) {
-        if (/\S/.test(this[b])) {
-            break
-        }
-        b--
-    }
-    return this.slice(a, b + 1)
-}
+
 // 定制方法
 const log = console.log.bind(console, '>>>')
 const ensure = function(a, b, message) {
@@ -79,7 +62,7 @@ class bigsea {
             listen.observe(dom, options)
         }
     }
-    
+
     // 事件 (绑定/委托)
     on(names, select, callback, one) {
         let off = function(e, arr) {

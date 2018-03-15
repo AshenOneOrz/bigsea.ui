@@ -1,3 +1,3 @@
-Sea(document).on('mousedown', 'sea.checkbox', function() {
-    Sea(this).toggleClass('checked')
+Sea(document).on('click', 'sea.checkbox', function() {
+    Sea(this).toggleAttr('checked')
 })

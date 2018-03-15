@@ -11,7 +11,7 @@ Sea.UIEvent.btn = function() {
         let element = Sea(this)
         let group = element.parent()
         group.data('now', index)
-        group.find('.btn').removeClass('checked')
-        element.addClass('checked')
+        group.find('.btn').removeAttr('checked')
+        element.attr('checked', '')
     })
 }

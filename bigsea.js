@@ -344,12 +344,34 @@ class bigsea {
             e.remove()
         }
     }
+    // 获取或设置属性
+    attr(key, val) {
+        if (this.dom) {
+            if (typeof val === 'string') {
+                for (let e of this.arr) {
+                    e.setAttribute(key, val)
+                }
+            } else {
+                return this.dom.getAttribute(key)
+            }
+        }
+    }
     // 删除属性
-    removeAttr(str) {
+    removeAttr(key) {
         for (let e of this.arr) {
-            e.removeAttribute(str)
+            e.removeAttribute(key)
         }
         return this
+    }
+    // 开关属性
+    toggleAttr(key, val) {
+        if (this.dom) {
+            if (this.attr(key) === null) {
+                this.attr(key, val || "")
+            } else {
+                this.removeAttr(key)
+            }
+        }
     }
 
     // 判断隐藏

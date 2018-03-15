@@ -2,6 +2,9 @@
 *, :after, :before {
     box-sizing: border-box;
 }
+body {
+    overflow-x: hidden;
+}
 body, button, input, select, textarea {
     font-size: 1rem;
     font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Helvetica,PingFang SC,Hiragino Sans GB,Microsoft YaHei,SimSun,sans-serif;
@@ -28,15 +31,6 @@ a {
 }
 a:hover {
     color: var(--primary-hover);
-}
-.iconfont {
-    display: inline-block;
-    vertical-align: baseline;
-    text-align: center;
-    text-transform: none;
-    line-height: 1;
-    text-rendering: optimizeLegibility;
-    -moz-osx-font-smoothing: grayscale;
 }
 
 img {
@@ -74,4 +68,15 @@ h6 {
 sea {
     display: inline-flex;
     align-items: center;
+    vertical-align: middle;
+}
+
+.iconfont {
+    display: inline-block;
+    vertical-align: baseline;
+    text-align: center;
+    text-transform: none;
+    line-height: 1;
+    text-rendering: optimizeLegibility;
+    -moz-osx-font-smoothing: grayscale;
 }

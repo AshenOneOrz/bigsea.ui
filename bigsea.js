@@ -259,6 +259,16 @@ class bigsea {
     hasClass(str) {
         return this.dom.classList.contains(str)
     }
+    // 开关类
+    toggleClass(str) {
+        for (let e of this.arr) {
+            if (e.classList.contains(str)) {
+                e.classList.remove(str)
+            } else {
+                e.classList.add(str)
+            }
+        }
+    }
 
     // 获取或设置 文本
     text(text) {

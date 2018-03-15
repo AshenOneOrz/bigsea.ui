@@ -7,23 +7,20 @@ sea.btn {
     justify-content: center;
     align-items: center;
 
-    -ms-touch-action: manipulation;
     touch-action: manipulation;
-
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
+    -ms-touch-action: manipulation;
+    
     user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
 
-    -webkit-transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
     transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
 
-    border: 0.0625rem solid transparent;
+    border: 0.0625rem solid var(--primary-border);
 
     font-weight: 400;
     color: rgba(0, 0, 0, 0.75);
     background-color: #fff;
-    border-color: var(--primary-border);
 
     padding: 0 0.9375rem;
     font-size: 0.875rem;
@@ -70,8 +67,8 @@ sea.btn.clicked:after {
     border-radius: inherit;
     border: 0 solid var(--primary);
     opacity: 0.6;
-    -webkit-animation: animate-buttonClicked .4s;
-    animation: animate-buttonClicked .4s;
+    -webkit-animation: animate-button .4s;
+    animation: animate-button .4s;
 }
 sea.btn.clicked.danger::after {
     border-color: var(--danger);
@@ -192,11 +189,12 @@ sea.btn.danger:active {
 }
 
 sea.btn[loading] {
+    pointer-events: none;
     opacity: 0.75;
 }
 sea.btn[disabled] {
+    pointer-events: none;
     color: var(--disabled-color);
     background-color: var(--disabled-background);
     border-color: var(--primary-border);
-    pointer-events: none;
 }

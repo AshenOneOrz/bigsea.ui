@@ -64,7 +64,7 @@ bigsea.prototype.tooltip = function(html, where) {
         rightBottom() {
             tip.addClass('rightBottom')
             x += w
-            y -= 8
+            y += h - 8 - tip.h
         },
         left() {
             tip.addClass('left')
@@ -79,7 +79,7 @@ bigsea.prototype.tooltip = function(html, where) {
         leftBottom() {
             tip.addClass('leftBottom')
             x -= tip.w + 16
-            y -= 8
+            y += h - 8 - tip.h
         },
     }
     dict[where || 'bottomLeft']()

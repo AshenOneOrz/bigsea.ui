@@ -7,9 +7,11 @@ sea.tooltip {
     left: 0;
     display: flex;
     z-index: -1;
+    font-size: 14px;
+    line-height: 1.5;
+    /* white-space: nowrap; */
 }
 sea.tooltip .inner {
-    font-size: 14px;
     align-items: center;
     min-width: 40px;
     max-width: 250px;
@@ -62,7 +64,7 @@ sea.tooltip.rightTop .arrow {
   top: 8px;
 }
 sea.tooltip.rightBottom .arrow {
-  top: 8px;
+  bottom: 8px;
 }
 
 sea.tooltip.left .arrow,
@@ -80,7 +82,7 @@ sea.tooltip.leftTop .arrow {
   top: 8px;
 }
 sea.tooltip.leftBottom .arrow {
-  top: 8px;
+  bottom: 8px;
 }
 
 sea.tooltip.bottom .arrow,

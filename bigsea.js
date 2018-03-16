@@ -236,6 +236,15 @@ class bigsea {
         }
         return sea
     }
+    // 循环
+    each(callback) {
+        for(let i = 0; i < this.arr.length; i++) {
+            let e = new bigsea(this.arr[i])
+            if (callback(e, i) === null) {
+                break
+            }
+        }
+    }
 
     // 添加类
     addClass(str) {

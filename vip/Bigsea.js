@@ -5,19 +5,26 @@
         <sea class="btn">
             <i class="iconfont icon-edit"></i><text>编辑</text>
         </sea>`
-    let check = `<input type="checkbox">`
+    let checkAll = `
+        <sea class="checkbox all" name="nino">
+            <div class="box"></div>
+        </sea>`
+    let checkBox = `
+        <sea class="checkbox one" name="nino">
+            <div class="box"></div>
+        </sea>`
     Sea.table.n1 = {
-        thead: [check,'课程管理', '老师', '学生人数', '管理'],
+        thead: [checkAll,'课程管理', '老师', '学生人数', '管理'],
         tbody: [
-            [check, "水彩风景课", "鼠帝", "40", btn],
-            [check, "创作思维课", "大宝,虫虫", "20", btn],
+            [checkBox, "水彩风景课", "鼠帝", "40", btn],
+            [checkBox, "创作思维课", "大宝,虫虫", "20", btn],
         ],
     }
     Sea('sea.table.test').dom.dataset.key = 'Sea.table.n1'
 
     // 文字提示
     Sea('.test-tooltip').on('mouseover', 'sea.btn', function() {
-        Sea(this).tooltip('这是一段文字提示：' + this.innerText, this.innerText)
+        Sea(this).tooltip('这是一段文字提示：' + this.boxText, this.boxText)
     })
 
     // 动画

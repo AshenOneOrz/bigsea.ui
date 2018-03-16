@@ -5,7 +5,7 @@ sea.checkbox {
     touch-action: manipulation;
     user-select: none;
 }
-sea.checkbox .inner {
+sea.checkbox > .box {
     transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
     position: relative;
     width: 16px;
@@ -15,26 +15,43 @@ sea.checkbox .inner {
     background-color: #fff;
     transition: all .3s;
 }
-sea.checkbox .inner + text {
+sea.checkbox > .box + text {
     padding: 0 8px;
 }
-sea.checkbox:hover .inner {
+sea.checkbox:hover > .box {
     border-color: #1890ff;
 }
-sea.checkbox[checked] .inner {
+sea.checkbox[checked] > .box {
   background-color: #1890ff;
   border-color: #1890ff;
 }
-sea.checkbox[checked] .inner:after {
+sea.checkbox[checked] > .box:after {
+    display: table;
+    content: ' ';
     position: absolute;
     transform: rotate(45deg) scale(1);
     left: .256rem;
     top: .125rem;
-    display: table;
     width: .35rem;
     height: 0.57rem;
     border: .125rem solid #fff;
     border-top: 0;
     border-left: 0;
+}
+sea.checkbox[indeterminate] > .box {
+  background-color: #1890ff;
+  border-color: #1890ff;
+}
+sea.checkbox[indeterminate] > .box:after {
+    display: table;
     content: ' ';
+    position: absolute;
+    transform: scale(1);
+    left: 0.151rem;
+    top: 0.37rem;
+    width: 0.57rem;
+    height: 0.07rem;
+    border: .125rem solid #fff;
+    border-top: 0;
+    border-left: 0;
 }

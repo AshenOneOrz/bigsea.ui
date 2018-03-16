@@ -24,7 +24,7 @@
 
     // 文字提示
     Sea('.test-tooltip').on('mouseover', 'sea.btn', function() {
-        Sea(this).tooltip('这是一段文字提示：' + this.boxText, this.boxText)
+        Sea(this).tooltip('这是一段文字提示：' + this.innerText, this.innerText)
     })
 
     // 动画

@@ -1,0 +1,46 @@
+sea.radio {
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.65);
+    cursor: pointer;
+    touch-action: manipulation;
+    user-select: none;
+}
+sea.radio > .box {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 16px;
+    height: 16px;
+    border: 1px solid #d9d9d9;
+    border-radius: 50%;
+    background-color: #fff;
+    transition: all 0.3s;
+}
+sea.radio > .box + text {
+    padding: 0 8px;
+}
+sea.radio > .box:after {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    left: 3px;
+    top: 3px;
+    border-radius: 50%;
+    display: table;
+    content: ' ';
+    background-color: #1890ff;
+    opacity: 0;
+    transform: scale(0);
+    -webkit-transition: all 0.3s cubic-bezier(0.78, 0.14, 0.15, 0.86);
+    transition: all 0.3s cubic-bezier(0.78, 0.14, 0.15, 0.86);
+}
+sea.radio:hover > .box {
+    border-color: #1890ff;
+}
+sea.radio[checked] > .box {
+  border-color: #1890ff;
+}
+sea.radio[checked] > .box:after {
+    transform: scale(0.875);
+    opacity: 1;
+}

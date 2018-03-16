@@ -41,6 +41,18 @@
         opacity: 1;
     }
 }
+@keyframes antRadioEffect {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 0.5;
+  }
+  100% {
+    -webkit-transform: scale(1.6);
+            transform: scale(1.6);
+    opacity: 0;
+  }
+}
 
 .animate-spin {
     animation: animate-spin 1s linear infinite;

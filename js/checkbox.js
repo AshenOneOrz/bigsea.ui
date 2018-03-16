@@ -30,9 +30,10 @@ Sea.UIEvent.checkbox = function() {
     // 全选
     Sea(document).on('click', 'sea.checkbox.all', function() {
         let e = Sea(this)
-        e.toggleAttr('checked')
-        e.removeAttr('indeterminate')
         let name = e.attr('name')
+        let checkAll = Sea(`sea.checkbox.all[name="${name}"]`)
+        checkAll.toggleAttr('checked')
+        checkAll.removeAttr('indeterminate')
         let checkBox = Sea(`sea.checkbox.one[name="${name}"]`)
         if (checkBox.dom) {
             if (e.attr('checked') === null) {

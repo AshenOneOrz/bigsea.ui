@@ -456,6 +456,8 @@ class bigsea {
 
     // 文字提示
     tooltip() {}
+    // 表格渲染
+    table() {}
 }
 // Sea
 const Sea = function(select) {
@@ -597,8 +599,6 @@ Sea.static = {
     alert: null,
     // 弹窗确认
     confirm: null,
-    // 表格
-    table: {},
 }
 Object.keys(Sea.static).forEach(function(k) {
     Sea[k] = Sea.static[k]

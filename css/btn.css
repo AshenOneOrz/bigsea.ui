@@ -102,23 +102,25 @@ sea.btn.circle.sm {
 sea.btn > .iconfont + text, sea.btn > text + .iconfont {
     margin-left: .4rem;
 }
-sea.btn > .iconfont {
-    line-height: 1;
+
+sea.btn-group.lg > sea.btn,
+sea.input-group.lg > sea.btn {
+    padding: 0 15px;
+    font-size: 16px;
+    height: 40px;
+    line-height: 38px;
 }
 
-sea.input-group.lg > sea.btn, sea.btn-group.lg > sea.btn {
-  padding: 0 15px;
-  font-size: 16px;
-  height: 40px;
-  line-height: 38px;
-}
-sea.input-group.sm > sea.btn, sea.btn-group.sm > sea.btn {
+sea.btn-group.sm > sea.btn,
+sea.input-group.sm > sea.btn {
   padding: 0 7px;
   font-size: 14px;
   height: 24px;
   line-height: 22px;
 }
-sea.input-group.sm > sea.btn > .iconfont, sea.btn-group.sm sea.btn > .iconfont {
+
+sea.btn-group.sm sea.btn > .iconfont,
+sea.input-group.sm > sea.btn > .iconfont {
   font-size: 14px;
 }
 

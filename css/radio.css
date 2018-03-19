@@ -1,5 +1,5 @@
 sea.radio {
-    font-size: 14px;
+    font-size: 0.875rem;
     color: rgba(0, 0, 0, 0.65);
     cursor: pointer;
     touch-action: manipulation;
@@ -9,22 +9,22 @@ sea.radio > .box {
     position: relative;
     top: 0;
     left: 0;
-    width: 16px;
-    height: 16px;
-    border: 1px solid #d9d9d9;
+    width: 1rem;
+    height: 1rem;
+    border: 0.0625rem solid #d9d9d9;
     border-radius: 50%;
     background-color: #fff;
     transition: all 0.3s;
 }
 sea.radio > .box + text {
-    padding: 0 8px;
+    padding: 0 0.5rem;
 }
 sea.radio > .box:after {
     position: absolute;
-    width: 8px;
-    height: 8px;
-    left: 3px;
-    top: 3px;
+    width: 0.5rem;
+    height: 0.5rem;
+    left: 0.1875rem;
+    top: 0.1875rem;
     border-radius: 50%;
     display: table;
     content: ' ';

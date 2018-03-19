@@ -4,11 +4,11 @@ sea.table {
     align-items: flex-start;
 }
 sea.table > table {
-    font-size: 14px;
+    font-size: 0.875rem;
     width: 100%;
 
     border-collapse: separate;
-    border: 1px solid #e8e8e8;
+    border: 0.0625rem solid #e8e8e8;
     border-spacing: 0;
     text-align: left;
     border-radius: .25rem;
@@ -18,7 +18,7 @@ sea.table > table {
     position: relative;
 }
 sea.table td {
-    border-top: 1px solid #e8e8e8;
+    border-top: 0.0625rem solid #e8e8e8;
 }
 sea.table td, sea.table th {
     padding: 1rem;

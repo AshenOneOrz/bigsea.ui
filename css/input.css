@@ -1,10 +1,9 @@
 /* 输入框 */
 input[type="text"], input[type="password"], input[type="number"], textarea {
-    -webkit-appearance: none;
+  -webkit-appearance: none;
 }
 
-sea.input-group > input {
-    list-style: none;
+input, textarea {
     position: relative;
     display: inline-flex;
     padding: .25rem 0.625rem;
@@ -14,28 +13,38 @@ sea.input-group > input {
     line-height: 1.5rem;
     color: rgba(0, 0, 0, 0.65);
     background-color: #fff;
-    background-image: none;
     border: 0.0625rem solid var(--primary-border);
     border-radius: .25rem;
     transition: all .3s;
     outline: 0;
 }
-sea.input-group > input:hover {
+input:hover, textarea:hover {
     border-color: var(--primary-hover);
 }
-sea.input-group > input:focus {
+input:focus, textarea:focus {
     border-color: var(--primary-active);
-
+    outline: 0;
+    -webkit-box-shadow: 0 0 4px 2px rgba(24, 144, 255, 0.2);
+    box-shadow: 0 0 4px 2px rgba(24, 144, 255, 0.2);
 }
-sea.input-group > input::-moz-placeholder {
+input::-moz-placeholder, textarea::-moz-placeholder {
   color: #bfbfbf;
   opacity: 1;
 }
-sea.input-group > input:-ms-input-placeholder {
+input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   color: #bfbfbf;
 }
-sea.input-group > input::-webkit-input-placeholder {
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
   color: #bfbfbf;
+}
+
+textarea {
+    max-width: 100%;
+    height: auto;
+    resize: vertical;
+    vertical-align: bottom;
+    min-height: 4rem;
+    height: 10rem;
 }
 
 sea.input-group.lg > input {

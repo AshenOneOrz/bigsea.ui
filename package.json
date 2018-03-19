@@ -1,6 +1,6 @@
 {
     "scripts": {
-      "start": "node node/app.js"
+      "start": "node _node/app.js"
     },
     "dependencies": {
         "body-parser": "^1.18.2",

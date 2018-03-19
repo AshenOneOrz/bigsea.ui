@@ -53,7 +53,7 @@ const SeaUI = {
 
 // 主页
 app.get('/dev', (req, res) => {
-    let html = fs.readFileSync(`node/index.html`, 'utf8').replace(/>(\s+)</img, '><')
+    let html = fs.readFileSync(`_node/index.html`, 'utf8').replace(/>(\s+)</img, '><')
     html = html.replace('<!-- css -->',  SeaUI.css())
     html = html.replace('<!-- html -->', SeaUI.html())
     html = html.replace('<!-- js -->',   SeaUI.js())

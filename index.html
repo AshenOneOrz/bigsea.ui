@@ -1,0 +1,55 @@
+<h2 style="text-align:center">展示页面</h2><!DOCTYPE html><html><head><meta charset="utf-8"><title>100% 自主化 UI</title><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"><!-- css --><link href="css/animate.css" rel="stylesheet"><link href="css/breadcrumb.css" rel="stylesheet"><link href="css/btn.css" rel="stylesheet"><link href="css/checkbox.css" rel="stylesheet"><link href="css/confirm.css" rel="stylesheet"><link href="css/icon.css" rel="stylesheet"><link href="css/input.css" rel="stylesheet"><link href="css/pagination.css" rel="stylesheet"><link href="css/public.css" rel="stylesheet"><link href="css/radio.css" rel="stylesheet"><link href="css/switch.css" rel="stylesheet"><link href="css/table.css" rel="stylesheet"><link href="css/tooltip.css" rel="stylesheet"><style>
+        div[name |= "demo"] > * {
+            margin: .25rem;
+        }
+    </style></head><body><!-- html --><div name="demo-breadcrumb"><h2><a target="_blank" href="https://ant.design/components/breadcrumb-cn/">面包屑</a></h2><sea class="breadcrumb"><li><a href="#"><i class="iconfont icon-home"></i></a></li><li><a href="#"><i class="iconfont icon-user"></i><text>Application List</text></a></li><li>Application</li></sea>
+</div><div name="demo-btn"><h2><a href="http://ant.design/components/button-cn/" target="_blank">按钮</a></h2><sea class="btn primary lg"><i class="iconfont icon-rest"></i><text>Primary</text></sea><sea class="btn danger lg">Danger</sea><sea class="btn-group"><sea class="btn">Large</sea><sea class="btn">Default</sea><sea class="btn">Small</sea></sea><sea class="btn-group"><sea class="btn primary"><i class="iconfont icon-left"></i><text>Backward</text></sea><sea class="btn primary"><text>Forward</text><i class="iconfont icon-right"></i></sea></sea><sea disabled class="btn">Disabled</sea><sea class="btn circle lg"><i class="iconfont icon-search"></i></sea><sea loading class="btn circle sm"><i class="iconfont animate-spin icon-loading-short"></i></sea>
+</div><div name="demo-checkbox"><h2><a href="http://ant.design/components/checkbox-cn/" target="_blank">多选框</a></h2><sea class="checkbox all" name="test"><div class="box"></div><text>Select All</text></sea><sea class="checkbox one" name="test"><div class="box"></div><text>A</text></sea><sea class="checkbox one" name="test" checked><div class="box"></div><text>B</text></sea><sea class="checkbox one" name="test"><div class="box"></div><text>C</text></sea><sea class="checkbox one" name="test"><div class="box"></div><text>D</text></sea><sea class="checkbox all" name="test"><div class="box"></div><text>全部选择</text></sea>
+</div><div name="demo-icon"><h2><a href="node/iconfont.html" target="_blank">图标库</a></h2><style>
+    .icon-test i {
+        font-size: 1.5rem;
+        margin: 0 1rem;
+        color: rgba(0, 0, 0, 0.65);
+    }
+</style><div class="icon-test"><i class="iconfont icon-disconnect"></i><i class="iconfont icon-antdesign"></i><i class="iconfont icon-API"></i><i class="iconfont icon-appstore-o"></i><i class="iconfont icon-areachart"></i><i class="iconfont icon-appstore"></i></div>
+</div><div name="demo-input"><h2><a href="http://ant.design/components/input-cn/" target="_blank">输入框</a></h2><text>Chinese Name :</text><sea class="input-group"><input value="栗战书" placeholder=""></sea><br><sea class="input-group lg"><sea class="btn" style="pointer-events: none"><i class="iconfont icon-user"></i><text>用户名</text></sea><input value=""><sea class="btn"><i class="iconfont icon-enter"></i><text>验证</text></sea></sea><br><sea class="input-group lg"><sea class="btn" style="pointer-events: none"><i class="iconfont icon-lock"></i><text>密　码</text></sea><input value=""></sea>
+</div><div name="demo-pagination"><h2><a href="http://ant.design/components/pagination-cn/" target="_blank">分页</a></h2><!-- 触发 jump_page 事件 --><sea class="pagination" data-max="299"></sea><br><sea class="pagination" data-max="1024"></sea>
+</div><div name="demo-radio"><h2><a href="http://ant.design/components/radio-cn/" target="_blank">单选框</a></h2><sea class="radio" name="test"><div class="box"></div><text>苹果</text></sea><sea class="radio" name="test"><div class="box"></div><text>小米</text></sea><sea class="radio" name="test"><div class="box"></div><text>华为</text></sea><sea class="radio" name="test" checked><div class="box"></div><text>三星</text></sea>
+</div><div name="demo-table"><h2><a target="_blank" href="https://ant.design/components/table-cn/">表格</a></h2><style>
+    sea.table.test > .filter, sea.table.test > sea.pagination {
+        display: flex;
+        justify-content: flex-end;
+        width: 100%;
+    }
+    sea.table.test > * + * {
+        margin-top: 1rem;
+    }
+    sea.table.test > .filter > * + * {
+        margin-left: 15px;
+    }
+    sea.table.test table img {
+        width: 48px;
+        height: 48px;
+    }
+    sea.table.test table img + text {
+        margin-left: 8px;
+    }
+</style><sea class="table test" data-key=""><div class="filter"><sea class="btn-group"><sea class="btn">全部</sea><sea class="btn">进行中</sea><sea class="btn">已结束</sea></sea><sea class="input-group"><input value="" placeholder="请输入"><sea class="btn"><i class="iconfont icon-search"></i></sea></sea></div><table></table><sea class="pagination" data-max="1024"></sea></sea>
+</div><div name="demo-tooltip"><h2><a href="https://ant.design/components/tooltip-cn/" target="_blank">文字提示</a></h2><style>
+    .test-tooltip {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        justify-content: space-between;
+        white-space: nowrap;
+    }
+    .test-tooltip sea.btn {
+        width: 6rem;
+    }
+    .test-tooltip .hide {
+        opacity: 0;
+        pointer-events: none;
+    }
+</style><div class="test-tooltip"><div class=""><sea class="btn">topLeft</sea><sea class="btn">top</sea><sea class="btn">topRight</sea></div><div class=""><sea class="btn">leftTop</sea><sea class="btn hide"></sea><sea class="btn hide"></sea><sea class="btn hide"></sea><sea class="btn">rightTop</sea></div><div class=""><sea class="btn">left</sea><sea class="btn hide"></sea><sea class="btn hide"></sea><sea class="btn hide"></sea><sea class="btn">right</sea></div><div class=""><sea class="btn">leftBottom</sea><sea class="btn hide"></sea><sea class="btn hide"></sea><sea class="btn hide"></sea><sea class="btn">rightBottom</sea></div><div class=""><sea class="btn">bottomLeft</sea><sea class="btn">bottom</sea><sea class="btn">bottomRight</sea></div></div>
+</div><!-- js --><script src="bigsea.js"></script><script src="js/btn.js"></script><script src="js/checkbox.js"></script><script src="js/confirm.js"></script><script src="js/pagination.js"></script><script src="js/radio.js"></script><script src="js/switch.js"></script><script src="js/table.js"></script><script src="js/tooltip.js"></script><script src="bigsea_ui.js"></script><!-- vip --><script name="Bigsea" src="vip/Bigsea.js"></script><script name="Demoisellek" src="vip/Demoisellek.js"></script><script name="HuHandsome" src="vip/HuHandsome.js"></script><script name="Shaojieliu" src="vip/Shaojieliu.js"></script><script name="Tom" src="vip/Tom.js"></script><p>Hosted by <a href="https://ui.bigsea.cc" style="font-weight: bold">bigseaUI</a></p></body></html>

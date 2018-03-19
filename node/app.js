@@ -52,13 +52,15 @@ const SeaUI = {
 }
 
 // 主页
-app.get('/', (req, res) => {
+app.get('/dev', (req, res) => {
     let html = fs.readFileSync(`node/index.html`, 'utf8').replace(/>(\s+)</img, '><')
     html = html.replace('<!-- css -->',  SeaUI.css())
     html = html.replace('<!-- html -->', SeaUI.html())
     html = html.replace('<!-- js -->',   SeaUI.js())
     html = html.replace('<!-- vip -->',  SeaUI.vip())
-    res.send(html)
+    // 写入首页预览 ui.bigsea.cc
+    fs.writeFileSync('index.html', '<h2 style="text-align:center">展示页面</h2>' + html, 'utf8')
+    res.end(html)
 })
 
 // 404
@@ -90,5 +92,5 @@ let server = app.listen(1130, '0.0.0.0', function () {
         }
     }
     let port = server.address().port
-    console.log("应用实例，访问地址为 http://%s:%s", ip, port)
+    console.log("应用实例，访问地址为 http://%s:%s/dev", ip, port)
 })

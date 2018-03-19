@@ -1,4 +1,6 @@
 ```
+npm start 运行项目
+
 bigsea_ui.js 包含 js css html 三部分
 vip 文件夹下是测试 js 文件
 

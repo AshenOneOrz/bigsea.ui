@@ -51,6 +51,7 @@ vip/Tom.js
 |图标|icon|完成|
 |输入框|input|完成|
 |文字提示|tooltip|完成|
-|多选框|checkbox|开发中|
-|表格|table|开发中|
-|单选框|radio|开发中|
+|表格|table|完成|
+|多选框|checkbox|完成|
+|单选框|radio|完成|
+|栅格|grids|完成|

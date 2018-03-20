@@ -2,6 +2,7 @@
 sea.btn {
     position: relative;
     cursor: pointer;
+
     white-space: nowrap;
 
     justify-content: center;

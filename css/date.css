@@ -1,13 +1,10 @@
 sea.date input {
     text-align: center;
 }
-sea.date .year {
+sea.date input.year {
     width: 64px;
 }
-sea.date .mon,
-sea.date .day,
-sea.date .hour,
-sea.date .min {
+sea.date input:not(.year) {
     width: 40px;
 }
 sea.date > .group + .group {

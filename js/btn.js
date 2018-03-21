@@ -7,11 +7,13 @@ Sea.UIEvent.btn = function() {
         }, 400)
         // Sea.confirm('测试')
     })
-    Sea('sea.btn-group').on('mousedown', 'sea.btn', function(event, index) {
+    Sea('sea.group').on('mousedown', 'sea.btn', function(event, index) {
         let element = Sea(this)
         let group = element.parent()
-        group.data('now', index)
-        group.find('.btn').removeAttr('checked')
-        element.attr('checked', '')
+        if (group.find('input').dom === undefined) {
+            group.data('now', index)
+            group.find('.btn').removeAttr('checked')
+            element.attr('checked', '')
+        }
     })
 }

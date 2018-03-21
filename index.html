@@ -10,7 +10,7 @@
     }
 </style><sea class="btn primary"><text>Primary</text><i class="iconfont icon-rest"></i></sea><sea class="btn danger"><i class="iconfont icon-delete"></i><text>Primary</text></sea><sea class="group"><sea class="btn">Large</sea><sea class="btn">Default</sea><sea class="btn">Small</sea></sea><sea class="group lg"><sea class="btn primary"><i class="iconfont icon-left"></i><text>Backward</text></sea><sea class="btn primary"><text>Forward</text><i class="iconfont icon-right"></i></sea></sea><sea disabled class="btn">Disabled</sea><sea class="btn circle lg"><i class="iconfont icon-search"></i></sea><sea loading class="btn circle sm"><i class="iconfont animate-spin icon-loading-short"></i></sea>
 </div><div name="demo-checkbox"><h2><a href="http://ant.design/components/checkbox-cn/" target="_blank">多选框</a></h2><sea class="checkbox all" name="test"><div class="box"></div><text>全部选择</text></sea><sea class="checkbox one" name="test"><div class="box"></div><text>A</text></sea><sea class="checkbox one" name="test"><div class="box"></div><text>B</text></sea><sea class="checkbox one" name="test" checked><div class="box"></div><text>C</text></sea><sea class="checkbox one" name="test"><div class="box"></div><text>D</text></sea>
-</div><div name="demo-date"><h2><a href="https://ant.design/components/date-picker-cn/" target="_blank">日期</a></h2><sea class="date"><text>日期：</text><sea class="group"><input class="year" maxlength="4" placeholder="2018"><input class="mon" maxlength="2" placeholder="01"><input class="day" maxlength="2" placeholder="01"></sea><sea class="group"><input class="hour" maxlength="2" placeholder="24"><input class="min" maxlength="2" placeholder="00"></sea></sea>
+</div><div name="demo-date"><h2><a href="https://ant.design/components/date-picker-cn/" target="_blank">日期</a></h2><text>开始日期：</text><sea class="date"></sea><br><text>结束日期：</text><sea class="date"></sea>
 </div><div name="demo-grids"><h2><a href="http://ant.design/components/gied-cn/" target="_blank">栅格</a></h2><style>
     .demo-col {
         justify-content: center;
@@ -52,7 +52,7 @@
         width: 8rem;
         justify-content: flex-end !important;
     }
-</style><sea class="group lg"><text><i class="iconfont icon-user"></i><span>用户名</span></text><input value=""><sea class="btn"><i class="iconfont icon-enter"></i><text>检查</text></sea></sea><br><sea class="group lg"><text><i class="iconfont icon-lock"></i><span>密　码</span></text><input value="" placeholder="请输入密码"><sea class="btn"><i class="iconfont icon-check"></i><text>登陆</text></sea></sea><br><textarea placeholder="这里可以输入多行文本"></textarea>
+</style><sea class="group lg"><text><i class="iconfont icon-user"></i><span>用户名</span></text><input value=""><sea class="btn"><i class="iconfont icon-enter"></i><text>检查</text></sea></sea><br><sea class="group lg"><text><i class="iconfont icon-lock"></i><span>密　码</span></text><input type="password" value="" placeholder="请输入密码"><sea class="btn"><i class="iconfont icon-check"></i><text>登陆</text></sea></sea><br><textarea placeholder="这里可以输入多行文本"></textarea>
 </div><div name="demo-pagination"><h2><a href="http://ant.design/components/pagination-cn/" target="_blank">分页</a></h2><!-- 触发 jump_page 事件 --><sea class="pagination" data-max="299"></sea><br><sea class="pagination" data-max="1024"></sea>
 </div><div name="demo-radio"><h2><a href="http://ant.design/components/radio-cn/" target="_blank">单选框</a></h2><sea class="radio" name="test"><div class="box"></div><text>苹果</text></sea><sea class="radio" name="test"><div class="box"></div><text>小米</text></sea><sea class="radio" name="test"><div class="box"></div><text>华为</text></sea><sea class="radio" name="test" checked><div class="box"></div><text>三星</text></sea>
 </div><div name="demo-table"><h2><a target="_blank" href="https://ant.design/components/table-cn/">表格</a></h2><style>
@@ -74,7 +74,7 @@
     sea.table.test table img + text {
         margin-left: 8px;
     }
-</style><sea class="table test" data-key=""><div class="filter"><sea class="btn-group"><sea class="btn">全部</sea><sea class="btn">进行中</sea><sea class="btn">已结束</sea></sea><sea class="input-group"><input value="" placeholder="请输入"><sea class="btn"><i class="iconfont icon-search"></i></sea></sea></div><table></table><sea class="pagination" data-max="1024"></sea></sea>
+</style><sea class="table test" data-key=""><div class="filter"><sea class="group"><sea class="btn">全部</sea><sea class="btn">进行中</sea><sea class="btn">已结束</sea></sea><sea class="group"><input value="" placeholder="请输入"><sea class="btn"><i class="iconfont icon-search"></i></sea></sea></div><table></table><sea class="pagination" data-max="1024"></sea></sea>
 </div><div name="demo-tooltip"><h2><a href="https://ant.design/components/tooltip-cn/" target="_blank">文字提示</a></h2><style>
     .test-tooltip {
         display: flex;

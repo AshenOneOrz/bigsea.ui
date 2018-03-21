@@ -1,6 +1,3 @@
-sea.group > .primary:not(:first-child) {
-    border-left-color: var(--primary-hover);
-}
 sea.group > :first-child:not(:last-child) {
     border-bottom-right-radius: 0;
     border-top-right-radius: 0;
@@ -9,6 +6,14 @@ sea.group > :last-child:not(:first-child) {
     border-bottom-left-radius: 0;
     border-top-left-radius: 0;
 }
+
+sea.group.no-line > :not(:first-child) {
+    border-left-width: 0;
+}
+sea.group.no-line > :not(:last-child) {
+    border-right-width: 0;
+}
+
 sea.group > :not(:first-child):not(:last-child) {
     border-radius: 0;
 }
@@ -73,3 +78,7 @@ sea.group.sm > text > .iconfont,
 sea.group.sm > sea.btn > .iconfont {
     font-size: 0.875rem;
 }
+
+/* sea.group > .primary:not(:first-child) {
+    border-left-color: var(--primary-hover);
+} */

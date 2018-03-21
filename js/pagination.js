@@ -2,9 +2,7 @@ Sea.innerHTML = `
     <sea class="btn previous">
         <i class="iconfont icon-left"></i>
     </sea>
-    <sea class="input-group">
-        <input value="第 1 页">
-    </sea>
+    <input value="第 1 页">
     <sea class="btn next">
         <i class="iconfont icon-right"></i>
     </sea>`.html()

@@ -307,7 +307,9 @@ class bigsea {
     val(str) {
         if (this.dom) {
             if (str !== undefined) {
-                this.dom.value = str
+                for (let e of this.arr) {
+                    e.value = str
+                }
                 return this
             } else {
                 return this.dom.value

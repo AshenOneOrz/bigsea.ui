@@ -55,3 +55,4 @@ vip/Tom.js
 |多选框|checkbox|完成|
 |单选框|radio|完成|
 |栅格|grids|完成|
+|日期|date|开发中|

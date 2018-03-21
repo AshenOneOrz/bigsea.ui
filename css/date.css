@@ -1,0 +1,15 @@
+sea.date input {
+    text-align: center;
+}
+sea.date .year {
+    width: 64px;
+}
+sea.date .month,
+sea.date .day,
+sea.date .hour,
+sea.date .minute {
+    width: 40px;
+}
+sea.date > .group + .group {
+    margin-left: 8px;
+}

@@ -104,48 +104,6 @@ sea.btn > .iconfont + text, sea.btn > text + .iconfont {
     margin-left: .4rem;
 }
 
-sea.btn-group.lg > sea.btn,
-sea.input-group.lg > sea.btn {
-    padding: 0 15px;
-    font-size: 16px;
-    height: 40px;
-    line-height: 38px;
-}
-
-sea.btn-group.sm > sea.btn,
-sea.input-group.sm > sea.btn {
-  padding: 0 7px;
-  font-size: 14px;
-  height: 24px;
-  line-height: 22px;
-}
-
-sea.btn-group.sm sea.btn > .iconfont,
-sea.input-group.sm > sea.btn > .iconfont {
-  font-size: 14px;
-}
-
-sea.btn-group > .primary:not(:first-child) {
-    border-left-color: var(--primary-hover);
-}
-sea.btn-group > :first-child:not(:last-child) {
-    border-bottom-right-radius: 0;
-    border-top-right-radius: 0;
-}
-sea.btn-group > :last-child:not(:first-child) {
-    border-bottom-left-radius: 0;
-    border-top-left-radius: 0;
-}
-sea.btn-group > :not(:first-child):not(:last-child) {
-    border-radius: 0;
-}
-sea.btn-group > :not(:last-child) {
-    margin-right: -0.1rem;
-}
-sea.btn-group > :hover, sea.btn-group :focus, sea.btn-group :active {
-    z-index: 1;
-}
-
 sea.btn.primary {
     color: #fff;
     background-color: var(--primary);

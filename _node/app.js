@@ -32,12 +32,10 @@ const SeaUI = {
     },
     js() {
         let files = fs.readdirSync('js')
-        let js = '<!-- js -->'
-        js += '<script src="bigsea.js"></script>'
+        let js = ''
         for(let file of files) {
-            js += `<script src="js/${file}"></script>`
+            js += `<script src="js/${file}" charset="utf-8"></script>`
         }
-        js += '<script src="bigsea_ui.js"></script>'
         return js
     },
     vip() {

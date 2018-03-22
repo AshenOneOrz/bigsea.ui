@@ -208,6 +208,12 @@ class bigsea {
         }
         return sea
     }
+    // 查找上一个元素
+    prev() {
+        if (this.dom) {
+            return Sea(this.dom.previousSibling)
+        }
+    }
     // 查找下一个元素
     next() {
         if (this.dom) {
@@ -271,11 +277,7 @@ class bigsea {
     // 开关类
     toggleClass(str) {
         for (let e of this.arr) {
-            if (e.classList.contains(str)) {
-                e.classList.remove(str)
-            } else {
-                e.classList.add(str)
-            }
+            return e.classList.toggle(str)
         }
     }
 
@@ -322,7 +324,9 @@ class bigsea {
     data(key, val) {
         if (this.dom) {
             if (val !== undefined) {
-                this.dom.dataset[key] = val
+                for (let e of this.arr) {
+                    e.dataset[key] = val
+                }
             } else {
                 return this.dom.dataset[key]
             }
@@ -399,14 +403,22 @@ class bigsea {
     // 点击
     click() {
         this.dom.click()
+        return this
     }
     // 获得焦点
     focus() {
         this.dom.focus()
+        return this
     }
     // 失去焦点
     blur() {
         this.dom.blur()
+        return this
+    }
+    // 全选
+    select() {
+        this.dom.select()
+        return this
     }
 
     // 动画

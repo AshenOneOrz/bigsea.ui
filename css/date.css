@@ -1,12 +1,28 @@
-sea.date input {
+sea.date > sea.group input {
     text-align: center;
+    padding: 0;
 }
-sea.date input.year {
-    width: 60px;
+sea.date > sea.group text.zh {
+    padding: 0;
+    width: 18px;
 }
-sea.date input:not(.year) {
-    width: 40px;
+sea.date > sea.group text.zh.space {
+    padding-right: 8px;
+    width: 26px;
 }
-sea.date > .group + .group {
-    margin-left: 8px;
+sea.date > sea.group text.en {
+    padding: 0;
+    width: 6px;
+}
+
+sea.date > sea.group input {
+    width: 24px;
+}
+sea.date > sea.group input:first-child {
+    padding-left: 8px;
+    width: 54px;
+}
+sea.date > sea.group input:last-child {
+    padding-right: 8px;
+    width: 32px;
 }

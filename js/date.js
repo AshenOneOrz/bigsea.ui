@@ -27,6 +27,7 @@ Sea.UIEvent.date = function() {
     minute.val(now.format('mm'))
     //
     input.on('focus', function() {
+        log(this.placeholder)
         Sea(this).tooltip(this.placeholder, 'top')
     })
 }

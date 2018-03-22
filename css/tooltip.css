@@ -9,7 +9,7 @@ sea.tooltip {
     display: flex;
     z-index: -1;
     line-height: 1.5;
-    /* white-space: nowrap; */
+    white-space: nowrap;
 }
 sea.tooltip .inner {
     align-items: center;

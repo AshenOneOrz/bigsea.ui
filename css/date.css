@@ -2,7 +2,7 @@ sea.date input {
     text-align: center;
 }
 sea.date input.year {
-    width: 64px;
+    width: 60px;
 }
 sea.date input:not(.year) {
     width: 40px;

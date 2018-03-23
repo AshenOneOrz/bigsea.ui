@@ -1,0 +1,47 @@
+sea.upload {
+    flex-direction: column;
+    align-items: flex-start;
+}
+sea.upload input[type="file"]{
+    display: none;
+}
+sea.upload > .start {
+    margin-top: 16px;
+}
+sea.upload > .list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+sea.upload > .list > text {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    margin-top: 8px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    border: 0;
+    height: 22px;
+    padding: 0 4px;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+}
+sea.upload > .list > text:hover {
+    background-color: #e6f7ff;
+}
+sea.upload > .list > text > .del {
+    pointer-events: none;
+    opacity: 0;
+    margin-left: 24px;
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.45);
+}
+sea.upload > .list > text > .del:hover {
+    color: rgba(0, 0, 0, 0.65);
+}
+sea.upload > .list > text:hover > .del {
+    pointer-events: auto;
+    opacity: 1;
+    cursor: pointer;
+}

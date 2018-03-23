@@ -1,6 +1,6 @@
 /* 输入框 */
-input[type="text"], input[type="password"], input[type="number"], textarea {
-  -webkit-appearance: none;
+input, textarea {
+    -webkit-appearance: none;
 }
 
 input, textarea {

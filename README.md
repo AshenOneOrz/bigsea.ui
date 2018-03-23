@@ -56,3 +56,4 @@ vip/Tom.js
 |单选框|radio|完成|
 |栅格|grids|完成|
 |日期|date|完成|
+|上传|upload|开发中|

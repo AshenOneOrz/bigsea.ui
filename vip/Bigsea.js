@@ -26,6 +26,10 @@
         Sea(this).tooltip('这是一段文字提示：' + this.innerText, this.innerText)
     })
 
+    // 上传
+    Sea('sea.upload').on('upload', function(e) {
+        log(e.data)
+    })
     // 动画
     // Sea('.btn').on('click', function() {
     //     if (Sea('input').isHidden()) {

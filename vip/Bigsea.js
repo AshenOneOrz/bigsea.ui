@@ -30,6 +30,7 @@
     Sea('sea.upload').on('upload', function(e) {
         log(e.data)
     })
+
     // 动画
     // Sea('.btn').on('click', function() {
     //     if (Sea('input').isHidden()) {
@@ -38,4 +39,39 @@
     //         Sea('input').fadeOut()
     //     }
     // })
+
+    // markdown
+    window.md = new Remarkable({
+        linkTarget: '_blank',
+        linkify: false,
+        html: true,
+        breaks: true,
+        xhtmlOut: true,
+        typographer: true,
+        highlight: function(str, lang) {
+            if (lang && hljs.getLanguage(lang)) {
+                try {
+                    return hljs.highlight(lang, str).value
+                } catch (__) {}
+            }
+            try {
+                return hljs.highlightAuto(str).value
+            } catch (__) {}
+            return ''
+        }
+    })
+    md.core.ruler.enable([
+      'abbr',
+    ]);
+    md.block.ruler.enable([
+      'footnote',
+      'deflist',
+    ]);
+    md.inline.ruler.enable([
+      'footnote_inline',
+      'ins',
+      'mark',
+      'sub',
+      'sup',
+    ]);
 })()

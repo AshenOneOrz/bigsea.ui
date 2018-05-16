@@ -244,6 +244,7 @@ class bigsea {
     }
     // 循环
     each(callback) {
+        // 在 callback 中 return = null 相当于 break
         for(let i = 0; i < this.arr.length; i++) {
             let e = new bigsea(this.arr[i])
             if (callback(e, i) === null) {
@@ -393,7 +394,7 @@ class bigsea {
     isHidden() {
         let e = this.dom
         let style = window.getComputedStyle(e)
-        if (e.hidden || style.opacity === "0" || style.display === "none") {
+        if (e.hidden || style.visibility === "hidden" || style.opacity === "0" || style.display === "none") {
             return true
         } else {
             return false

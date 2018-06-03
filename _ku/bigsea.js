@@ -605,7 +605,18 @@ Sea.static = {
             throw "参数错误 Sea.has(obj, 'a.b.c')"
         }
     },
-
+    // 本地存储
+    localStorage(key, val) {
+        if (val === undefined) {
+            try {
+                return JSON.parse(window.localStorage[key])
+            } catch (err) {
+                return null
+            }
+        } else {
+            window.localStorage[key] = JSON.stringify(val)
+        }
+    },
     // UI 配合
 
     // 事件
@@ -654,25 +665,6 @@ Sea(document).on('animationend', function(event) {
     }
 })
 
-// Sea.Ajax.help
-Sea.Ajax.help = `// 示例
-Sea.Ajax({
-    method: 方法 String 默认"POST"
-    url:    地址 String 必填
-    data:   数据 Object 必填
-}).then(res => {
-    log(res)
-})
 // 其它
-search: 查询 Object
-header: 请求头部 Object
-header['Content-Type'] = 'application/json'
-callback: 回调函数 Function
-
-// 跨域请求
-cors: 跨域地址 String (url 填自己服务器接口)`
-
-// 其它
-// window.eval = undefined
-window.$ = window.jQuery ? $ : Sea
-;
+window.eval = undefined
+window.$ = window.jQuery ? $ : Sea;
